@@ -23,6 +23,6 @@ try{
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 }catch(Exception $e){
     echo "DB接続エラー：";
-    echo $e->getMessage;
+    echo $e->$getMessage;
     exit();
 }
