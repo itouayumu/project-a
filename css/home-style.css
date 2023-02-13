@@ -1,20 +1,136 @@
-.homeheader{
-
-}
-
-ul {
+.homeul1 {
     overflow:hidden;
     list-style:none;
+    z-index: 10;
     margin: 0 auto;
-    z-index: 20;
+    margin-right: 0;
+    margin-left: auto;
+    width: 30%;
 }
     
-ul li {
+.homeul1 li {
+    font-size: 25px;
     display: inline-block;
-    padding: 26px 10px 20px 10px;
+    padding: 20px 10px 20px 10px;
+}
+
+.homeul2 {
+    overflow:hidden;
+    list-style:none;
+    z-index: 10;
+    margin: 0 auto;
+    margin-right: 0;
+    margin-left: 80%;
+    width: 30%;
+}
+
+.homeul2 li {
+    font-size: 25px;
+    display: inline-block;
+    padding: 20px 10px 20px 10px;
 }
 
 a {
+    text-decoration: none;
     color: #fff;
-    text-transform: uppercase;
+    font-weight: 800;
+    /* text-transform: uppercase; */
+}
+
+a:hover{
+    color: #1ee3cf;
+}
+
+.posta{
+    color: #87a2e1;
+    font-weight: 800;
+}
+
+.posta:hover{
+    color: #1ee3cf;
+}
+
+.wrapper{
+    /* z-index: 1; */
+    padding-top: 150px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 2em;
+}
+
+.wrapper a{
+    background-color: rgba(255, 255, 255, 80%);
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.wrapper img {
+    box-shadow: 10px 10px 0 #87a2e1;
+  
+    margin-top: 6%;
+    /* margin-bottom: 50px; */
+    transition: transform .2s ease;
+    object-fit: cover;
+    display: inline-block;
+    z-index: 1;
+  }
+
+.wrapper{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.homepost{
+    display: block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #1ee3cf;
+    
+    text-decoration: none;
+    text-align: center;
+    font-size: 4rem;
+
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 5;
+}
+
+.homepura{
+    color: #FFF;
+}
+
+.homepost .caption {
+	font-size: 20px;
+	text-align: center;
+	padding-top: 35px;
+	color:rgb(47, 0, 255);
+    font-weight: 500;
+}
+
+.homepost .mask {
+	width: 100%;
+	height:	100%;
+	position: absolute;	/* 絶対位置指定 */
+	top: 0;
+	left: 0;
+	opacity: 0;	/* マスクを表示しない */
+	-webkit-transition:	all 0.2s ease;
+    border-radius: 50%;
+	transition:	all 0.2s ease;
+}
+
+.homepost:hover .mask {
+	opacity: 1;	/* マスクを表示する */
+}
+
+.homepost:hover{
+    /* color: #1ee3cf; */
+    background-color: #fff;
 }
