@@ -4,17 +4,13 @@ require_once ('db/connect.php');
 //エラーフラグが1だった場合はエラーを出す
 $error_flg = 0;
 if(isset($_POST) && !empty($_POST)) {
-    echo $_POST["username"];
-    echo $_POST["password"];
     if (!empty($_POST['username'])) {
         $username = $_POST['username'];
-        echo "era-desu";
     } else {
         $error_flg = 1;
     }
     if (!empty($_POST['password'])) {
         $password = $_POST['password'];
-        echo "nakanihaitteimasu";
     }else{
         $error_flg = 1;
     }
@@ -28,47 +24,58 @@ if(isset($_POST) && !empty($_POST)) {
         $stm->bindValue(':username',$username,PDO::PARAM_STR);
         $stm->execute();
         $result = $stm->fetch(PDO::FETCH_ASSOC);
-        echo"<pre>";
-        var_dump($result);
-        echo"<pre>";
         if($result !== false){
             if($password === $result["pw"]){
                 //セッションにユーザー名を入れる         
-                if (!isset($_SESSION['username'])) {
-                    // キー'count'が登録されていなければ、1を設定
-                    $_SESSION['username'] = 1;
+                
+                // キー'count'が登録されていなければ、1を設定
+                $_SESSION['username'] = $username;
 
-                    //home.phpにリダイレクトする1
-                    header("Location:home.php");
-                    exit();
-                }
+                //home.phpにリダイレクトする1
+                header("Location:home.php");
+                exit();
+                
             }else{
-                echo "ログイン失敗";
+                $error_flg = 1;
             }
         }else{
-            echo "ログイン失敗";
+            $error_flg = 1;
         }
     }
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./css/login.css">
 <title>Document</title>
 </head>
 <body>
-<div class="logfin">
-<p><?php if($error_flg) echo "入力してください"; ?></p>
-<form action="login.php" method="POST">
-    <label for="id">アカウント名</label>
-    <input id="id" name="username" type="text" placeholder="usernameを入力">
-    <label for="pw">パスワード</label>
-    <input id="pw" name="password" type="password" placeholder="パスワードを入力">
-    <button name="login" type="submit">ログインする</button>
-</form>
+<div class="wrapper">
+ 
+    <div class="contents flex">
+            <div class="flex-container">
+                <a href="home.php" class="prev_button">←</a>
+                <h2 class="login">ログイン</h2>
+
+                <!--エラーが出たらここに書く⇩-->
+                <p class="error"><?php if($error_flg) echo "もう一度入力してください"; ?></p>
+
+                <form class="login_form flex" action="login.php" method="POST">
+                    <div class="user_box">
+                        <input type="text" placeholder="ユーザー名" name="username">
+                    </div>
+                    <div class="pw_box">
+                        <input type="password" placeholder="パスワード" name="password">
+                    </div>
+                    <input type="submit" value="ログイン">
+                </form>
+            <div class="transition_login">
+                <p>アカウントをお持ちでない方は<a href="register.php">コチラ</a></p>
+    </div>
 </div>
 </body>
 </html>
