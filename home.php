@@ -1,11 +1,13 @@
 <?php
     require_once 'db_connect.php';
 
-    $sql = "SELECT * FROM post";
+    $sql = "SELECT * FROM post WHERE deleteid=0";
     $stm = $pdo->prepare($sql);
     $stm->execute();
     $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-
+   
+  
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +38,7 @@
     <?php
     foreach($result as $data){  
         echo <<<"EOD"
-            <a href="#" class="posta">
+            <a href="delete.php?id={$data['id']}" class="posta">
             <div>
                 <img class="" src="img/{$data['imgid']}" alt="記事写真" style="width: 100%; height: 200px;"></p>
                 <p>{$data['postname']}</p>
