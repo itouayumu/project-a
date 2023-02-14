@@ -30,6 +30,8 @@ if(isset($_POST) && !empty($_POST)) {
                 
                 // キー'count'が登録されていなければ、1を設定
                 $_SESSION['username'] = $username;
+                //セッションにユーザーidを入れる
+                $_SESSION['userid'] = $result['id'];
 
                 //home.phpにリダイレクトする1
                 header("Location:home.php");
