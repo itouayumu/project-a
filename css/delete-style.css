@@ -1,0 +1,89 @@
+
+.delete-title{
+    margin: 0;
+    padding: 0;
+    position:absolute; top: 20%; right:10%;
+    font-size: 30px;
+    color: white;
+}
+
+
+/*パンくずリスト*/
+
+.delete-pan{
+    font-size: 20px;
+    margin: 0;
+    padding-top: 67px;
+   left: -5%;
+}
+.breadcrumb {
+    margin: 0;
+   
+    list-style: none;
+  }
+  
+  .breadcrumb li {
+    display: inline;
+    list-style: none;
+    font-weight: bold;
+  }
+  
+  .breadcrumb li:after {
+    
+    content: '>';
+    padding: 0 0.2em;
+    color: #555;
+  }
+  
+  .breadcrumb li:last-child:after {
+    content: '';
+  }
+  
+  .breadcrumb li a {
+    text-decoration: none;
+    color: gray;
+  }
+  
+
+  
+  .breadcrumb li a:hover {
+    text-decoration: underline;
+  }
+  .delete-check{
+    
+    font-size: 30px;
+    color: red;
+    text-align:center;
+  }
+img{
+ 
+    height: 40%;
+    width: 40%;
+    box-shadow: 10px 10px 0 #87a2e1;
+    object-fit: cover;
+    display: flex;
+    position:absolute; top: 40%; right:10%;
+    
+}
+.delete-contentc{
+  word-break: break-word;
+  display: flex;
+  width: 40%;
+  background-color:  rgba(255, 255, 255, 80%);
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-right: 30px;
+    position:absolute; top: 40%; right:55%;
+}
+.delete-contenta{
+  font-size: 20px;
+  font-weight: 800;
+}
+.delete-contentb{
+  
+  background-color:  rgba(255, 255, 255, 80%);
+  text-align:center;
+}
+a.btn-gradient {
+  border-radius: 100vh;
+}
