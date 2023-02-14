@@ -1,11 +1,13 @@
 <?php
+    session_start();
+
     require_once 'db_connect.php';
 
-    $sql = "SELECT * FROM post";
+    $sql = "SELECT * FROM post WHERE releaseid=:selectid";
     $stm = $pdo->prepare($sql);
+    $stm->bindValue(':selectid', 0, PDO::PARAM_INT);
     $stm->execute();
     $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +22,15 @@
 </head>
 <body>
     <header class="header homeheader">
-        <?php if(isset($_SESSION['user'])){ ?>
-        <ul class="homeul1">
-            <li><a href="#">マイページ</a></li>
-            <li><a href="#">ログアウト</a></li>
-        </ul>
+        <?php if(empty($_SESSION)){ ?>
+            <ul  class="homeul2">
+                <li><a href="login.php">ログイン</a></li>
+            </ul>
         <?php }else{ ?>
-        <ul  class="homeul2">
-            <li><a href="#">ログイン</a></li>
-        </ul>
+            <ul class="homeul1">
+                <li><a href="mypage.php">マイページ</a></li>
+                <li><a href="logout.php">ログアウト</a></li>
+            </ul>
         <?php } ?>
     </header>
 

@@ -1,9 +1,9 @@
 <?php
+    session_start();
     require_once 'db_connect.php';
-    // $acid = $_SESSION['user'];
-    $acid = 2;
+    $acid = $_SESSION['userid'];
 
-    $sql1 = "SELECT * FROM acount WHERE id=:acid";
+    $sql1 = "SELECT * FROM account WHERE id=:acid";
     $stm1 = $pdo->prepare($sql1);
     $stm1->bindValue(':acid', $acid, PDO::PARAM_INT);
     $stm1->execute();
@@ -30,8 +30,8 @@
 <body>
     <header class="header myheader">
         <ul class="mypul">
-            <li><a href="#">トップへ</a></li>
-            <li><a href="#">ログアウト</a></li>
+            <li><a href="home.php">トップへ</a></li>
+            <li><a href="logout.php">ログアウト</a></li>
         </ul>
     </header>
     
