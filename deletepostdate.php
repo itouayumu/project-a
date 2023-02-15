@@ -40,7 +40,7 @@
   <li itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
     <a itemprop="item" href="mypage.php">
-        <span itemprop="name">マイページ</span>
+        <span itemprop="name">記事詳細ページ</span>
     </a>
     <meta itemprop="position" content="2" />
   </li>
