@@ -84,6 +84,36 @@ img{
   background-color:  rgba(255, 255, 255, 80%);
   text-align:center;
 }
-a.btn-gradient {
-  border-radius: 100vh;
+
+.shakin1 {
+  text-decoration: none;
+  font-size: 30px;
+    width: 25%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 10px 110px 10px 110px;
+    margin-left: 50px;
+    border-radius: 30px;
+    position:absolute; top: 85%;   right: 63%;
+    border: none;
+}
+
+.shakin1:hover{
+  color: #1ee3cf;
+    background-color: #fff;
+}
+.shakin2 {
+  text-decoration: none;
+  font-size: 30px;
+    width: 10%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 10px 110px 10px 110px;
+    margin-left: 50px;
+    border-radius: 30px;
+    position:absolute; top: 85%;left: 53%;
+}
+.shakin2:hover{
+  color: #1ee3cf;
+    background-color: #fff;
 }
