@@ -4,7 +4,7 @@
     require_once 'db_connect.php';
 
 
-    $sql = "SELECT * FROM post WHERE deleteid=0" and releaseid=:selectid;
+    $sql = "SELECT * FROM post WHERE deleteid=0 and releaseid=:selectid";
 
     $stm = $pdo->prepare($sql);
     $stm->bindValue(':selectid', 0, PDO::PARAM_INT);
