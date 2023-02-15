@@ -7,6 +7,6 @@
       $stm = $pdo->prepare($sql);
       $stm->execute();
       $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-      header("Location:mypage.php.php");
+      header("Location:mypage.php");
       exit();
   ?>

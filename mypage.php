@@ -9,7 +9,7 @@
     $stm1->execute();
     $result1 = $stm1->fetchAll(PDO::FETCH_ASSOC);
 
-    $sql2 = "SELECT * FROM post WHERE acountid=:acid";
+    $sql2 = "SELECT * FROM post WHERE acountid=:acid and deleteid = 0";
     $stm2 = $pdo->prepare($sql2);
     $stm2->bindValue(':acid', $acid, PDO::PARAM_INT);
     $stm2->execute();
