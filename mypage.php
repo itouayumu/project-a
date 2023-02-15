@@ -70,7 +70,7 @@
                         <td><a href="" class="botan">編集</a></td>
                     </tr>
                     <tr>
-                        <td><a href="" class="botan">削除</a></td>
+                        <td><a href="delete.php?id={$data2['id']}" class="botan">削除</a></td>
                     </tr>
                 EOD;
                     }

@@ -80,7 +80,7 @@ EOD;
 
 			  			<input type="submit" class="shakin1" value="確定">
 			  		</form>	
-            <a href="home.php" class="shakin2">キャンセル</a>
+            <a href="mypage.php" class="shakin2">キャンセル</a>
             <div>
 </body>
 </html>

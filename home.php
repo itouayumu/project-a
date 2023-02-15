@@ -52,7 +52,7 @@
         ?>
     </div>
 
-    <a href="#">
+    <a href="post.php">
     <div class="homepost">
         <div class="homepura">＋</div>
         <div class="mask">
