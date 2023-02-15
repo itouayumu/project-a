@@ -2,44 +2,54 @@
 require_once 'db_connect.php';
 
 session_start();
-echo"<pre>";
-var_dump($_POST);
-echo"</pre>";
 
 //これはフォームの内容がからじゃなかったらインサートする
 if(empty($_POST["name"])){
     $error_flg = 1; 
-    echo "a";
+    
 }else if(empty($_POST["pw"])&&($_POST["pw"])!==($_POST["pw2"])){
     $error_flg = 1;
-    echo "b";
+    
 
 }else if(empty($_POST["mail"])){
     $error_flg = 1;
-    echo "c";
+    
 
 }else if(empty($_POST["icon"])){
     $error_flg = 1;
-    echo "d";
+    
 }else{
     
-   
-    $sql = "insert into account (name,mail,pw,cionid) values (:name, :mail, :pw, :cionid)";
-    
+    //データベースの中に今から登録をする名前が存在するかどうか
+    $sql = 'SELECT name FROM account WHERE name = :name';
+
+    //データベースの中から入力されたあたいをけんんさくする
     $stm = $pdo->prepare($sql);
     $stm->bindValue(':name',$_POST["name"],PDO::PARAM_STR);
-    $stm->bindValue(':mail',$_POST["mail"],PDO::PARAM_STR);
-    $stm->bindValue(':pw',$_POST["pw"],PDO::PARAM_STR);
-    $stm->bindValue(':cionid',$_POST["icon"],PDO::PARAM_STR);
-
     $stm->execute();
+    //その結果存在していたらエラーをひょうじする
+    $result = $stm->fetch(PDO::FETCH_ASSOC);
+    if($result !== false){
+        $error_flg = 1;
+    }else{
+        //その結果が存在していなかったらインサートする
+        
+        $sql = "insert into account (name,mail,pw,cionid) values (:name, :mail, :pw, :cionid)";
+        
+        $stm = $pdo->prepare($sql);
+        $stm->bindValue(':name',$_POST["name"],PDO::PARAM_STR);
+        $stm->bindValue(':mail',$_POST["mail"],PDO::PARAM_STR);
+        $stm->bindValue(':pw',$_POST["pw"],PDO::PARAM_STR);
+        $stm->bindValue(':cionid',$_POST["icon"],PDO::PARAM_STR);
 
-
+        $stm->execute();
+    }
 }
 
 if($error_flg != 1){
     header("Location:login.php");
 }
+
     
 ?>
 
@@ -54,6 +64,7 @@ if($error_flg != 1){
 </head>
 <body>
     <!-- 特定ページのコンテンツをここに追加 -->
+    
     
     <div id="register">
         <div class="contents flex-container">
@@ -77,7 +88,7 @@ if($error_flg != 1){
                 <div class="pw2_box">
                     <input type="password" placeholder="Password" name="pw2" class="form">
                 </div>
-                <h3>アイコン<span class="optional">任意</span></h3>
+                <h3>アイコン<span class="Required">必須</span></h3>
                 <select name="icon" >
                     <option value="">デフォルト</option>
                     <option value="ac1">アイコン１</option>
