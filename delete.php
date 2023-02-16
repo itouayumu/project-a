@@ -39,16 +39,16 @@
 
   <li itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="カテゴリー1のURL">
-        <span itemprop="name">カテゴリー1</span>
+    <a itemprop="item" href="mypage.php">
+        <span itemprop="name">マイページ</span>
     </a>
     <meta itemprop="position" content="2" />
   </li>
 
   <li itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="カテゴリー2のURL">
-        <span itemprop="name">カテゴリー2</span>
+    <a itemprop="item" href="#">
+        <span itemprop="name">消去確認ページ</span>
     </a>
     <meta itemprop="position" content="3" />
   </li>
@@ -78,9 +78,9 @@ EOD;
 			  			<input type="hidden" name="d" value="1">
               <input type="hidden" name="id" value="<?php $id=$_GET['id']; echo $id; ?>">
 
-			  			<input type="submit" class="btn btn-gradient" value="確定">
+			  			<input type="submit" class="shakin1" value="確定">
 			  		</form>	
-           <a href="home.php" class="btn btn-gradient">戻る</a>
+            <a href="mypage.php" class="shakin2">キャンセル</a>
             <div>
 </body>
 </html>
