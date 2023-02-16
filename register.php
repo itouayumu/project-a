@@ -60,6 +60,22 @@ if($error_flg != 1){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/register.css">
+    <SCRIPT LANGUAGE="JavaScript">
+    // <!--
+    var ac_img = new Array();
+    ac_img[0] = new Array("img/ac1.png","アイコン１","ac1.png");
+    ac_img[1] = new Array("img/ac2.png","アイコン２","ac2.png");
+    ac_img[2] = new Array("img/ac3.jpeg","アイコン３","ac3.jpeg");
+    ac_img[3] = new Array("img/ac4.jpg","アイコン４","ac4.jpg");
+    ac_img[4] = new Array("img/ac5.png","アイコン５","ac5.png");
+    ac_img[5] = new Array("img/ac6.jpg","アイコン６","ac6.jpg");
+    ac_img[6] = new Array("img/ac7.jpg","アイコン７","ac7.jpg");
+    function set_img(sel_val)
+    {
+    img_area.src = ac_img[sel_val][0];
+    }
+    //-->
+    </SCRIPT>
     <title>Document</title>
 </head>
 <body>
@@ -89,16 +105,16 @@ if($error_flg != 1){
                     <input type="password" placeholder="Password" name="pw2" class="form">
                 </div>
                 <h3>アイコン<span class="Required">必須</span></h3>
-                <select name="icon" >
-                    <option value="">デフォルト</option>
-                    <option value="ac1">アイコン１</option>
-                    <option value="ac2">アイコン２</option>
-                    <option value="ac3">アイコン３</option>
-                    <option value="ac4">アイコン４</option>
-                    <option value="ac5">アイコン５</option>
-                    <option value="ac6">アイコン６</option>
-                    <option value="ac7">アイコン７</option>
+                <select onchange="set_img(this.selectedIndex)" name="icon">
+                    <SCRIPT language=javascript>
+                    for(nn=0;nn<ac_img.length;nn++) {
+                        document.write("<option value=" + ac_img[nn][2] + ">" + ac_img[nn][1]);
+                    }
+                    </SCRIPT>
                 </select>
+                <br><br>
+                    <img name=img_area border=1 style="width:150px; height:	150px; object-fit: cover;">
+                <br><br>
             </div>
         
             <div class="high_and_low">
