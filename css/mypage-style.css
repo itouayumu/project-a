@@ -107,3 +107,53 @@ hr{
     color: #1ee3cf;
     background-color: #fff;
 }
+
+.homepost{
+    display: block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #1ee3cf;
+    
+    text-decoration: none;
+    text-align: center;
+    font-size: 4rem;
+
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 5;
+}
+
+.homepura{
+    color: #FFF;
+}
+
+.homepost .caption {
+	font-size: 20px;
+	text-align: center;
+	padding-top: 35px;
+	color:rgb(47, 0, 255);
+    font-weight: 500;
+}
+
+.homepost .mask {
+	width: 100%;
+	height:	100%;
+	position: absolute;	/* 絶対位置指定 */
+	top: 0;
+	left: 0;
+	opacity: 0;	/* マスクを表示しない */
+	-webkit-transition:	all 0.2s ease;
+    border-radius: 50%;
+	transition:	all 0.2s ease;
+}
+
+.homepost:hover .mask {
+	opacity: 1;	/* マスクを表示する */
+}
+
+.homepost:hover{
+    /* color: #1ee3cf; */
+    background-color: #fff;
+}
