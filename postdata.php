@@ -6,7 +6,7 @@
     $postid = (int)$_GET['id'];
     $nownum = 0;
 
-    $sql1 = "SELECT * FROM post WHERE id=:pid";
+    $sql1 = "SELECT * FROM post WHERE id=:pid AND releaseid=0";
     $stm1 = $pdo->prepare($sql1);
     $stm1->bindValue(':pid', $postid, PDO::PARAM_INT);
     $stm1->execute();
