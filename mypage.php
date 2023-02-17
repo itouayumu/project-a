@@ -60,7 +60,7 @@
                     </tr>
                     <tr>
                         <td rowspan="2" style="width:50%;" class="postlink">
-                            <a href="#">
+                            <a href="postdata.php?id={$data2['id']}">
                                 <img class="" src="img/{$data2['imgid']}" alt="記事写真" style="width: 100%; height: 200px; object-fit: cover;">
                                 <div class="mask">
                                     <div class="caption">詳細へ</div>

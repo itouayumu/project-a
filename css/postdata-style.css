@@ -75,10 +75,25 @@ a:hover{
     margin-bottom: 50%;
 }
 
+.command{
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    top: 470px;
+}
+
+.command a{
+    color: #1ee3cf;
+}
+
+.command a:hover{
+    color: #87a2e1;
+}
+
 .posttitle{
     text-align: center;
     font-size: 35px;
-    padding-top: 100px;
+    padding-top: 50px;
     margin-bottom: 0px;
     margin-top: 100px;
     font-weight: 800;

@@ -112,6 +112,14 @@
         <div class="data">
             <?php
                 foreach($result1 as $data1){  
+                    if($_SESSION['userid'] === $data1['acountid']){
+                        echo <<<"EOD"
+                        <div class="command">
+                            <a href="updataform.php">編集</a>
+                            <a href="delete.php">削除</a>
+                        </div>
+                        EOD;
+                    }
                 echo <<<"EOD"
                         <p class="posttitle">{$data1['postname']}<hr></p>
                         <img class="kijiimg" src="img/{$data1['imgid']}" alt="記事写真" style="width: 70%; height: 300px;">

@@ -112,3 +112,7 @@ input[type="submit"]:hover{
     color: #1ee3cf;
     background-color: #fff;
 }
+
+.update{
+  text-align: center;
+}

@@ -26,10 +26,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/update-style.css">
+    <title>update</title>
 </head>
 <body>
-    <p>編集しました</p>
-    <a href="mypage.php">マイページへ戻る</a>
+    <div class="update">
+        <p>編集しました</p>
+        <a href="mypage.php">マイページへ戻る</a>
+    </div>
 </body>
 </html>
