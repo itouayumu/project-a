@@ -71,6 +71,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/update-style.css">
 
@@ -94,9 +95,41 @@
     //-->
     </SCRIPT>
 
-    <title>Document</title>
+    <title>change</title>
 </head>
 <body>
+<header class="changeheader">
+    <ul>
+        <p class="change-title">投稿変更ページ</p>
+    </ul>
+</header>
+<div class="change-pan">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="home.php">
+        <span itemprop="name">ホーム</span>
+    </a>
+    <meta itemprop="position" content="1" />
+  </li>
+
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="mypage.php">
+        <span itemprop="name">マイページ</span>
+    </a>
+    <meta itemprop="position" content="2" />
+  </li>
+
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="#">
+        <span itemprop="name">投稿編集ページ</span>
+    </a>
+    <meta itemprop="position" content="3" />
+  </li>
+</ol>
+</div>
 <form action="update.php?id=<?php echo $id; ?>" method="post">
     <p>記事タイトル</p>
     <input type="text" name="name" value="<?php echo $result['postname'] ?>"><br>
@@ -117,7 +150,7 @@
     <label><input type="radio" name="releaseid" value="0" <?php echo $release_y; ?>>公開</label>
     <label><input type="radio" name="releaseid" value="1" <?php echo $release_n; ?>>非公開</label><br><br>
     <input type="submit" value="変更" name="botan"><br>
-    <a href="mypage.php">戻る</a>
+    <a href="mypage.php" name="a">戻る</a>
 </form>
 </body>
 </html>

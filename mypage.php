@@ -78,5 +78,13 @@
             </table>
         </div>
     </div>
+    <a href="post.php">
+    <div class="homepost">
+        <div class="homepura">＋</div>
+        <div class="mask">
+            <div class="caption">投稿する</div>
+        </div>
+    </div>
+    </a>
 </body>
 </html>
