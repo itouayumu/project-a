@@ -117,11 +117,6 @@ if($error_flg != 1){
                 <br><br>
             </div>
         
-            <div class="high_and_low">
-                <label><input type="checkbox" name="Terms" value="Terms"><a href="#">利用規約</a>に同意します。</label>
-                <label><input type="checkbox" name="privacy" value="privacy"><a href="#">プライバシーポリシー</a>に同意します。</label>
-            </div>
-        
             <button class="register-button">登録</button>
             <div class="transition_login">
                 <label>アカウントをお持ちの方は<a href="login.php">コチラ</a></label>
