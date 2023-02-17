@@ -103,7 +103,7 @@
     <p>内容</p>
     <textarea name="content"><?php echo $result['content'] ?></textarea><br>
     <p>記事画像</p>
-    <select onchange="set_img(this.selectedIndex)"name="img">
+    <select onchange="set_img(this.selectedIndex)"name="postimg">
         <SCRIPT language=javascript>
             for(nn=0;nn<list_img.length;nn++) {
                 document.write("<option value=" + list_img[nn][2] + ">" + list_img[nn][1]);
