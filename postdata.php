@@ -115,8 +115,8 @@
                     if($_SESSION['userid'] === $data1['acountid']){
                         echo <<<"EOD"
                         <div class="command">
-                            <a href="updataform.php">編集</a>
-                            <a href="delete.php">削除</a>
+                            <a href="updateform.php?id={$data1['id']}">編集</a>
+                            <a href="delete.php?id={$data1['id']}">削除</a>
                         </div>
                         EOD;
                     }
