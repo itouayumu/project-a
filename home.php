@@ -51,7 +51,8 @@
             }
         ?>
     </div>
-
+    <?php if(empty($_SESSION)){ ?>
+        <?php }else{ ?>
     <a href="post.php">
     <div class="homepost">
         <div class="homepura">＋</div>
@@ -60,6 +61,6 @@
         </div>
     </div>
     </a>
-
+    <?php } ?>
 </body>
 </html>
