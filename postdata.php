@@ -134,6 +134,7 @@
             ?>
         </div>
     </div>
+    
     <div class="returnstyle">
         <a href="postdata.php?id=<?php echo $previd; ?>" class="migihidari">←</a>
         <a href="postdata.php?id=<?php echo $nextid; ?>" class="migihidari">→</a><br>
