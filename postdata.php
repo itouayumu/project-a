@@ -111,14 +111,16 @@
 
         <div class="data">
             <?php
-                foreach($result1 as $data1){  
-                    if($_SESSION['userid'] === $data1['acountid']){
-                        echo <<<"EOD"
-                        <div class="command">
-                            <a href="updateform.php?id={$data1['id']}">編集</a>
-                            <a href="delete.php?id={$data1['id']}">削除</a>
-                        </div>
-                        EOD;
+                foreach($result1 as $data1){
+                    if(isset($_SESSION['userid'])){
+                        if($_SESSION['userid'] === $data1['acountid']){
+                            echo <<<"EOD"
+                            <div class="command">
+                                <a href="updateform.php?id={$data1['id']}">編集</a>
+                                <a href="delete.php?id={$data1['id']}">削除</a>
+                            </div>
+                            EOD;
+                        }
                     }
                 echo <<<"EOD"
                         <p class="posttitle">{$data1['postname']}<hr></p>
@@ -132,6 +134,7 @@
             ?>
         </div>
     </div>
+    
     <div class="returnstyle">
         <a href="postdata.php?id=<?php echo $previd; ?>" class="migihidari">←</a>
         <a href="postdata.php?id=<?php echo $nextid; ?>" class="migihidari">→</a><br>
