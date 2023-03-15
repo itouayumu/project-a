@@ -67,16 +67,17 @@ if(isset($_POST) && !empty($_POST)) {
                 <p class="error"><?php if($error_flg) echo "もう一度入力してください"; ?></p>
 
                 <form class="login_form flex" action="login.php" method="POST">
-                    <div class="user_box">
-                        <input type="text" placeholder="ユーザー名" name="username">
+                    <div class="box">
+                        <input type="text" placeholder="ユーザー名" name="username" class="boxstyle">
                     </div>
-                    <div class="pw_box">
-                        <input type="password" placeholder="パスワード" name="password">
+                    <div class="box">
+                        <input type="password" placeholder="パスワード" name="password"  class="boxstyle">
                     </div>
                     <input type="submit" value="ログイン">
                 </form>
             <div class="transition_login">
                 <p>アカウントをお持ちでない方は<a href="register.php">コチラ</a></p>
+            </div>
     </div>
 </div>
 </body>

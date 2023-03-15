@@ -80,51 +80,51 @@ if($error_flg != 1){
 </head>
 <body>
     <!-- 特定ページのコンテンツをここに追加 -->
-    
-    
-    <div id="register">
-        <div class="contents flex-container">
-            <a href="top.php" class="prev_button">←</a>
-            <h2 class="register">新規登録</h2>
-            <form action="register.php" method="post">
+    <div class="contents flex-container">
+        <a href="login.php" class="prev_button">←</a>
+        <h2 class="register">新規登録</h2>
+
+        <form action="register.php" method="post">
             <div class="register_form">
-                <h3 class="name_box">ユーザー名<span class="Required">必須</span></h3>
-                    <div class="name_box">
-                        <input type="text" placeholder="例)お菓子　太郎" name="name" class="form">
-                    </div>  
-                <h3 class="mail_box">メールアドレス<span class="Required">必須</span></h3>
-                <div class="mail_box">
+                <h3 class="box">ユーザー名<span class="Required">必須</span></h3>
+                <div class="inputbox">
+                    <input type="text" placeholder="例)お菓子　太郎" name="name" class="form">
+                </div>
+
+                <h3 class="box">メールアドレス<span class="Required">必須</span></h3>
+                <div class="inputbox">
                     <input type="text" placeholder="E-mail" name="mail" class="form">
                 </div>
-                <h3 class="pw_box">パスワード<span class="Required">必須</span></h3>
-                <div class="pw_box">
+
+                <h3 class="box">パスワード<span class="Required">必須</span></h3>
+                <div class="inputbox">
                     <input type="password" placeholder="Password" name="pw" class="form">
                 </div>
+
                 <h3>パスワード(確認用)<span class="Required">必須</span></h3>
-                <div class="pw2_box">
+                <div class="inputbox">
                     <input type="password" placeholder="Password" name="pw2" class="form">
                 </div>
+
                 <h3>アイコン<span class="Required">必須</span></h3>
                 <select onchange="set_img(this.selectedIndex)" name="icon">
                     <SCRIPT language=javascript>
-                    for(nn=0;nn<ac_img.length;nn++) {
-                        document.write("<option value=" + ac_img[nn][2] + ">" + ac_img[nn][1]);
-                    }
+                        for(nn=0;nn<ac_img.length;nn++) {
+                            document.write("<option value=" + ac_img[nn][2] + ">" + ac_img[nn][1]);
+                        }
                     </SCRIPT>
                 </select>
+
                 <br><br>
                     <img name=img_area border=1 style="width:150px; height:	150px; object-fit: cover;">
                 <br><br>
             </div>
-        
-            <button class="register-button">登録</button>
+            
             <div class="transition_login">
+                <button class="register-button">登録</button><br>
                 <label>アカウントをお持ちの方は<a href="login.php">コチラ</a></label>
             </div>
-        </div>
         </form>
     </div>
-    </div>
-</div>
 </body>
 </html>

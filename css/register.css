@@ -2,142 +2,84 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     background-color:#86a0de;
 }
-#register{
-    display: flex;
-    justify-content: center;
-    
+
+.contents{
+    background-color: #FFF;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 50px;
 }
-.register-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    margin:0 0 0 24%;
-    padding: .8em 2em;
-    border: none;
-    border-radius: 25px;
-    background-color: #1ee3cf;
-    color:black;
-    font-weight: 600;
-    font-size: 1em;
-    flex-direction: column;
-    }
-    .register-button:hover {
-    background-color: #1ee3cf;
-    } 
-    .contents{
-        
-        background: #fff;
-        box-sizing: border-box;
-        width: 30%;
-        border: 1px solid #707070;
-        border-radius: 50px;
-        padding: 20px;
-        box-sizing: border-box;
-        z-index: 1;
-        min-width: 500px;
-        margin-bottom: 30px;
-    }
-    .contents h2{
-        font-weight: bold;
-        font-size: 48px;
-        margin: 10px 0px;
-    }
-    .register{
-        text-align: center;
-    }
-    .register_form{
-        margin:0 auto;
-        width: 100%;
-    }
-    .register_form>div {
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .form{
-        border: 1px solid #707070;
-        border-radius: 20px;
-        font-size: 20px;
-        padding: 3px 50px 3px 60px;
-        margin-bottom: 15px;
-        width: 75%;
-        height: 50px;
-        font-size: clamp(70%, 10vw, 80%); 
 
-        
-    }
-    input[type="text"],
-    input[type="password"]{
-    font-size: 20px;
-
-    }
-
-    .side{
-        display: flex;
-        justify-content: center;
-    align-items: center;
-    }
-
-    .optional{
-        background-color:#A19292;
-        color: #fff;
-        font-size: 0.6rem;
-    }
-
-    .high_and_low{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin:30px 0;
-    }
-    .high_and_low label{
-        width: 70%;
-    }
-
-    .explanation{
-        font-size: 12px;
-    }
-    .Required{
-        background-color:red;
-        color: #fff;
-        font-size: 0.6rem;
-    }
-    .pulld{
-        size: 60;
-    }
-    .post_cord_box {
-        display: inline-block; /* なくても大丈夫だけど、念の為 */
-        position: relative; /* 基準値とする */
-        margin: 0 auto;
-    }
-
-    .post_cord_box::before{
-        background: url(../img/post.png) no-repeat center center / auto 100%; /* 背景にアイコン画像を配置 */
-      }
-.post_cord_box::before {
-    content: ""; /* 疑似要素に必須 */
-    width: 24px; /* アイコンの横幅 */
-    height: 24px; /* アイコンの高さ */
-    display: inline-block; /* 高さを持たせるためにインラインブロック要素にする */
-    position: absolute; /* 相対位置に指定 */
-    top: 18px; /* アイコンの位置。微調整してね */
-    bottom: 0px;
-    margin-top: auto;
-    bottom: auto;
-    left: 24px; /* アイコンの位置。微調整してね */
-}
-.prev_button {
-    padding-left: 20px;
+.prev_button{
+    position: absolute;
+    margin-left: 20%;
+    left: 50px;
     text-decoration: none;
-    color: #000;
-    font-size: 50px;
-    z-index: 2;
+    font-size: 40px;
+    color: #86a0de;
+}
+
+.register{
+    font-size: 40px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.register_form{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.box{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.inputbox{
+    margin-bottom: 20px;
+}
+
+.Required{
+    background-color: red;
+    color: #FFF;
+    font-size: 13px;
+}
+
+input[type="text"],input[type="password"]{
+    width: 60%;
+    height: 50px;
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 100px;
+    border: double 5px #86a0de;
+    border-radius: 50px;
 }
 
 .transition_login{
     text-align: center;
-    margin-top: 20px;
+    padding-bottom: 30px;
+}
+
+.register-button{
+    font-size: 25px;
+    width: 30%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 0px 50px 0px 50px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: solid 1px #86a0de;
+}
+
+.register-button:hover{
+    color: #1ee3cf;
+    background-color: #fff;
 }
