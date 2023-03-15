@@ -109,7 +109,7 @@
                     <?php
                         foreach($result2 as $data2){  
                         echo <<<"EOD"
-                                <td style="width:20%;"><img class="acimg" src="img/{$data2['cionid']}" alt="アイコン写真" style="width: 200px; height: 200px;"></td>
+                                <td style="width:20%;"><img class="acimg" src="img/{$data2['cionid']}" alt="アイコン写真"></td>
                                 <td style="width:80%;" class="acname">{$data2['name']}</td>
                         EOD;
                         }
@@ -132,7 +132,7 @@
                         }
                     echo <<<"EOD"
                             <p class="posttitle">{$data1['postname']}<hr></p>
-                            <img class="kijiimg" src="img/{$data1['imgid']}" alt="記事写真" style="width: 70%; height: 300px;">
+                            <img class="kijiimg" src="img/{$data1['imgid']}" alt="記事写真">
                             <div class="databunstyle">
                                 <p class="databun">$content</p>
                                 <p class="date">{$data1['timestump']}</div>
