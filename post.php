@@ -27,8 +27,9 @@ function set_img(sel_val)
 {
   img_area.src = list_img[sel_val][0];
 }
-//-->
+
 </SCRIPT>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
   <div>
@@ -71,31 +72,48 @@ function set_img(sel_val)
                         <p>内容</p>
                         <textarea class="content" name="content"rows="5" cols="33"placeholder="内容"></textarea>
                     </div>
-                    <div class="postimg">
-                    <select onchange="set_img(this.selectedIndex)"name="img">
+                    <div id="app">
+         <div class="preview_zone">
+           
+            <img :src="url" alt="ここにプレビューが表示されます">
+         </div>
+         <div class="upload_zone">
+          
+            <input type="file" class="input_file" ref="preview" @change="previewImage"name="imgid">
+             <div class="drop_zone">
+             </div>
 
-<SCRIPT language=javascript>
-  for(nn=0;nn<list_img.length;nn++) {
-    document.write("<option>" + list_img[nn][1]);
-  }
-</SCRIPT>
-
-</select>
-<br><br>
-<img name=img_area border=1 class="img">
-<br><br>
-<div class="post-radio">
+     </div>
+     <div class="post-radio">
 <input type="radio" name="Release" value="0"default>公開
-
 <input type="radio" name="Release" value="1">非公開
 </div>
+     <script>
+       const app = new Vue({
+           el: '#app',
+           data: {
+               url: '',
+           },
+           methods: {
+               previewImage() {
+                   let image = this.$refs.preview.files[0];
+                   this.url = URL.createObjectURL(image);
+               }
+           }
+       })
+     </script>
 
-                    </div>
-                    <input type="submit"class="shakin1" value="投稿する">
-    </form>
-  <a href="home.php"class="shakin2">戻る</a>
-               
 
+
+
+
+</div>
+
+<input type="submit"class="shakin1" value="投稿する">
+</form>
+<form class="postform" action="home.php" method="POST">
+<input type="submit"class="shakin2" value="戻る">
+</form>
 </body>
 
 </html>
