@@ -11,24 +11,10 @@
     <link rel="stylesheet" href="css/style.css">
     <title>投稿ページ</title>
     <SCRIPT LANGUAGE="JavaScript">
-<!--
-var list_img = new Array();
-list_img[0] = new Array("img/k-autodoa.jpeg","アウトドア");
-list_img[1] = new Array("img/k-diy.jpg","DIY");
-list_img[2] = new Array("img/k-game.png","ゲーム");
-list_img[3] = new Array("img/k-ivennto.png","イベント");
-list_img[4] = new Array("img/k-myhome.jpg","マイホーム");
-list_img[5] = new Array("img/k-osyare.jpg","おしゃれ");
-list_img[6] = new Array("img/k-syoku.jpg","食");
-list_img[7] = new Array("img/k-syopping.jpg","ショッピング");
-list_img[8] = new Array("img/k-syumi.png","趣味");
-list_img[9] = new Array("img/k-zatudann.png","雑談");
-function set_img(sel_val)
-{
-  img_area.src = list_img[sel_val][0];
-}
-//-->
+
+
 </SCRIPT>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
   <div>
@@ -71,31 +57,48 @@ function set_img(sel_val)
                         <p>内容</p>
                         <textarea class="content" name="content"rows="5" cols="33"placeholder="内容"></textarea>
                     </div>
-                    <div class="postimg">
-                    <select onchange="set_img(this.selectedIndex)"name="img">
+                    <div id="app">
+         <div class="preview_zone">
+           
+            <img :src="url" alt="ここにプレビューが表示されます">
+         </div>
+         <div class="upload_zone">
+          
+            <input type="file" class="input_file" ref="preview" @change="previewImage"name="imgid">
+             <div class="drop_zone">
+             </div>
 
-<SCRIPT language=javascript>
-  for(nn=0;nn<list_img.length;nn++) {
-    document.write("<option>" + list_img[nn][1]);
-  }
-</SCRIPT>
-
-</select>
-<br><br>
-<img name=img_area border=1 class="img">
-<br><br>
-<div class="post-radio">
+     </div>
+     <div class="post-radio">
 <input type="radio" name="Release" value="0"default>公開
-
 <input type="radio" name="Release" value="1">非公開
 </div>
+     <script>
+       const app = new Vue({
+           el: '#app',
+           data: {
+               url: '',
+           },
+           methods: {
+               previewImage() {
+                   let image = this.$refs.preview.files[0];
+                   this.url = URL.createObjectURL(image);
+               }
+           }
+       })
+     </script>
 
-                    </div>
-                    <input type="submit"class="shakin1" value="投稿する">
-    </form>
-  <a href="home.php"class="shakin2">戻る</a>
-               
 
+
+
+
+</div>
+
+<input type="submit"class="shakin1" value="投稿する">
+</form>
+<form class="postform" action="home.php" method="POST">
+<input type="submit"class="shakin2" value="戻る">
+</form>
 </body>
 
 </html>
