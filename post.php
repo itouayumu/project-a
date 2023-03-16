@@ -48,7 +48,7 @@
 </div>
 <div class="delete-contenta">
     <p class="post-subtitle" >記事投稿</p>
-    <form class="postform" action="postresult.php" method="POST">
+    <form class="postform" action="postresult.php" method="POST"enctype="multipart/form-data" >
                     <div class="title">
                         <p>タイトル</p>
                         <input type="text" class="title" placeholder="記事タイトル" name="title">
@@ -64,9 +64,8 @@
          </div>
          <div class="upload_zone">
           
-            <input type="file" class="input_file" ref="preview" @change="previewImage"name="imgid">
-             <div class="drop_zone">
-             </div>
+            <input type="file" class="input_file" ref="preview" @change="previewImage"name="image">
+            
 
      </div>
      <div class="post-radio">
