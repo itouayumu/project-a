@@ -88,14 +88,14 @@ img{
 .shakin1 {
   text-decoration: none;
   font-size: 30px;
-    width: 25%;
-    color: #fff;
-    background-color: #1ee3cf;
-    padding: 10px 110px 10px 110px;
-    margin-left: 50px;
-    border-radius: 30px;
-    position:absolute; top: 95%;   right: 63%;
-    border: none;
+  width: 25%;
+  color: #fff;
+  background-color: #1ee3cf;
+  padding: 10px 110px 10px 110px;
+  margin-left: 50px;
+  border-radius: 30px;
+  position:absolute; top: 95%;   right: 63%;
+  border: none;
 }
 
 .shakin1:hover{
@@ -116,4 +116,136 @@ img{
 .shakin2:hover{
   color: #1ee3cf;
     background-color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+  .delete-title{
+    margin: 0;
+    padding: 0;
+    position:absolute; top: 25%; right:20px;
+    font-size: 25px;
+    color: white;
+  }
+
+  /*パンくずリスト*/
+  .delete-pan{
+      font-size: 15px;
+      margin: 0;
+      padding-top: 67px;
+      margin-left: -30px;
+  }
+  .breadcrumb {
+    margin: 0;
+   
+    list-style: none;
+  }
+  
+  .breadcrumb li {
+    display: inline;
+    list-style: none;
+    font-weight: bold;
+  }
+  
+  .breadcrumb li:after {
+    
+    content: '>';
+    padding: 0 0.2em;
+    color: #555;
+  }
+  
+  .breadcrumb li:last-child:after {
+    content: '';
+  }
+  
+  .breadcrumb li a {
+    text-decoration: none;
+    color: gray;
+  }
+  
+
+  
+  .breadcrumb li a:hover {
+    text-decoration: underline;
+  }
+
+  .delete-check{
+    font-size: 25px;
+    color: red;
+    text-align:center;
+  }
+  
+  img{
+    height: 150px;
+    width: 96%;
+    box-shadow: 10px 10px 0 #87a2e1;
+    object-fit: cover;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: block;
+    position:static
+      
+  }
+
+  .delete-contentc{
+    word-break: break-word;
+    display: block;
+    width: 84%;
+    background-color:  rgba(255, 255, 255, 80%);
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position:static
+  }
+
+  .delete-contenta{
+    font-size: 20px;
+    font-weight: 800;
+  }
+  
+  .delete-contentb{
+    background-color:  rgba(255, 255, 255, 80%);
+    text-align:center;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .shakin1 {
+    text-decoration: none;
+    font-size: 25px;
+    text-align: center;
+    width: 80%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 10px 0px 10px 0px;
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 30px;
+    position:static;
+    border: none;
+  }
+
+  .shakin1:hover{
+    color: #1ee3cf;
+      background-color: #fff;
+  }
+  .shakin2 {
+    text-decoration: none;
+    font-size: 23px;
+    width: 30%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 10px 90px 10px 90px;
+    margin-left:10%;
+    margin-right: 10%;
+    margin-top: 200px;
+    border-radius: 30px;
+    position:absolute;
+    top: 450px;
+    left: 10px;
+  }
+  .shakin2:hover{
+    color: #1ee3cf;
+      background-color: #fff;
+  }
 }

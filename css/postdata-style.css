@@ -1,0 +1,361 @@
+.postheader{
+    z-index: 9;
+}
+
+.homeul1 {
+    overflow:hidden;
+    list-style:none;
+    z-index: 10;
+    margin: 0 auto;
+    margin-right: 0;
+    margin-left: auto;
+    width: 30%;
+}
+    
+.homeul1 li {
+    font-size: 25px;
+    display: inline-block;
+    padding: 20px 10px 20px 10px;
+}
+
+.homeul2 {
+    overflow:hidden;
+    list-style:none;
+    z-index: 10;
+    margin: 0 auto;
+    margin-right: 0;
+    margin-left: 80%;
+    width: 30%;
+}
+
+.homeul2 li {
+    font-size: 25px;
+    display: inline-block;
+    padding: 20px 10px 20px 10px;
+}
+
+.datapage{
+    margin-left: 10%;
+    margin-right: 10%;
+    /* margin-bottom: 100px; */
+    padding-top: 150px;
+    position: relative;
+    z-index: 4;
+}
+
+.huseip{
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 100px;
+    color: red;
+    font-size: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 800;
+    /* text-transform: uppercase; */
+}
+
+a:hover{
+    color: #1ee3cf;
+}
+
+.data{
+    margin-bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0px 30px 50px 30px;
+    border-radius: 10px;
+}
+
+.acstyle{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.acname{
+    font-size: 30px;
+    color: #fff;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
+
+.acimg{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.command{
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    top: 470px;
+}
+
+.command a{
+    color: #1ee3cf;
+}
+
+.command a:hover{
+    color: #87a2e1;
+}
+
+.posttitle{
+    text-align: center;
+    font-size: 35px;
+    padding-top: 50px;
+    margin-bottom: 0px;
+    margin-top: 100px;
+    font-weight: 800;
+}
+
+hr{
+    margin-top: 0px;
+    border-top: 6px solid #87a2e1;
+}
+
+.kijiimg{
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    object-fit: cover;
+    width: 70%;
+    height: 300px;
+}
+
+.databunstyle{
+    text-align: center;
+}
+
+.databun{
+    font-size: 20px;
+}
+
+.date{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+.returnstyle{
+    text-align: center;
+}
+
+.migihidari{
+    font-size: 50px;
+    width: 100%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 0px 50px 0px 50px;
+    border-radius: 10px;
+}
+
+.migihidari:hover{
+    color: #1ee3cf;
+    background-color: #fff;
+}
+
+.returnsoto{
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+.return{
+    font-size: 30px;
+    width: 100%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 0px 50px 0px 50px;
+    border-radius: 10px;
+}
+
+.return:hover{
+    color: #1ee3cf;
+    background-color: #fff;
+}
+
+.sma{
+    display: none !important;
+}
+
+
+@media screen and (max-width: 480px) {
+    .homeul1 {
+        overflow:hidden;
+        list-style:none;
+        z-index: 10;
+        margin: 0 auto;
+        margin-right: 0;
+        margin-left: auto;
+        width: 65%;
+    }
+        
+    .homeul1 li {
+        font-size: 20px;
+        display: inline-block;
+        padding: 20px 10px 20px 10px;
+    }
+    
+    .homeul2 {
+        overflow:hidden;
+        list-style:none;
+        z-index: 10;
+        margin: 0 auto;
+        margin-right: 0;
+        margin-left: 60%;
+    }
+    
+    .homeul2 li {
+        font-size: 20px;
+        display: inline-block;
+        padding: 20px 10px 20px 10px;
+    }
+
+    .datapage{
+        margin-left: 5%;
+        margin-right: 5%;
+        position: relative;
+        z-index: 4;
+    }
+    
+    .huseip{
+        text-align: center;
+        margin-top: 0px;
+        padding-top: 50px;
+        color: red;
+        font-size: 50px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 800;
+    }
+    
+    a:hover{
+        color: #1ee3cf;
+    }
+    
+    .data{
+        margin-bottom: 50px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 0px 30px 50px 30px;
+        border-radius: 10px;
+    }
+    
+    .acstyle{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .acname{
+        font-size: 30px;
+        color: #fff;
+        font-weight: 800;
+        text-align: center;
+        margin-top: 50%;
+        margin-bottom: 50%;
+    }
+
+    .acimg{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }    
+    
+    .command{
+        font-size: 25px;
+        position: absolute;
+        right: 20px;
+        top: 420px;
+    }
+    
+    .command a{
+        color: #1ee3cf;
+    }
+    
+    .command a:hover{
+        color: #87a2e1;
+    }
+    
+    .posttitle{
+        text-align: center;
+        font-size: 30px;
+        padding-top: 50px;
+        margin-bottom: 0px;
+        margin-top: 100px;
+        font-weight: 800;
+    }
+    
+    hr{
+        margin-top: 0px;
+        border-top: 6px solid #87a2e1;
+    }
+    
+    .kijiimg{
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+    }
+    
+    .databunstyle{
+        text-align: center;
+    }
+    
+    .databun{
+        font-size: 20px;
+        width: 100%;
+        word-break: break-all;
+    }
+    
+    .date{
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+    }
+    
+    .returnstyle{
+        text-align: center;
+    }
+    
+    .migihidari{
+        font-size: 40px;
+        width: 100%;
+        color: #fff;
+        background-color: #1ee3cf;
+        padding: 0px 50px 0px 50px;
+        border-radius: 10px;
+    }
+    
+    .migihidari:hover{
+        color: #1ee3cf;
+        background-color: #fff;
+    }
+    
+    .returnsoto{
+        margin-top: 40px;
+        padding-bottom: 100px;
+    }
+    
+    .return{
+        font-size: 25px;
+        width: 100%;
+        color: #fff;
+        background-color: #1ee3cf;
+        padding: 0px 50px 0px 50px;
+        border-radius: 10px;
+    }
+    
+    .return:hover{
+        color: #1ee3cf;
+        background-color: #fff;
+    }
+
+}

@@ -1,10 +1,10 @@
-* {
-    padding: 0;
+*{
     margin: 0;
+    padding: 0;
 }
 
-body {
-    background-color: #86a0de;
+body{
+    background-color:#86a0de;
 }
 
 .contents{
@@ -13,7 +13,7 @@ body {
     margin-top: 20px;
     margin-left: 20%;
     margin-right: 20%;
-    text-align: center;
+    margin-bottom: 50px;
 }
 
 .prev_button{
@@ -25,132 +25,144 @@ body {
     color: #86a0de;
 }
 
-.login{
+.register{
     font-size: 40px;
     padding-top: 30px;
+    text-align: center;
 }
 
-.login_form{
+.register_form{
     margin-top: 10px;
     margin-bottom: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .box{
     margin-top: 20px;
+    font-size: 20px;
+}
+
+.inputbox{
     margin-bottom: 20px;
 }
 
+.Required{
+    background-color: red;
+    color: #FFF;
+    font-size: 13px;
+}
+
 input[type="text"],input[type="password"]{
-    width: 40%;
+    width: 60%;
     height: 50px;
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 30px;
-    padding-right: 30px;
+    padding-right: 100px;
     border: double 5px #86a0de;
     border-radius: 50px;
 }
 
-input[type="submit"]{
+.transition_login{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.register-button{
     font-size: 25px;
     width: 30%;
     color: #fff;
     background-color: #1ee3cf;
     padding: 0px 50px 0px 50px;
+    margin-bottom: 20px;
     border-radius: 50px;
     border: solid 1px #86a0de;
 }
 
-input[type="submit"]:hover{
+.register-button:hover{
     color: #1ee3cf;
     background-color: #fff;
 }
 
-.transition_login{
-    padding-bottom: 50px;
-}
-
-.error{
-    text-align: center;
-    color: red;
-    font-size: 0.8rem;
-}
-
 @media screen and (max-width: 480px) {
-    * {
-        padding: 0;
+    *{
         margin: 0;
+        padding: 0;
     }
     
-    body {
-        background-color: #86a0de;
+    body{
+        background-color:#86a0de;
     }
     
     .contents{
         background-color: #FFF;
         border-radius: 30px;
         margin-top: 20px;
-        margin-left: 10%;
-        margin-right: 10%;
-        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 50px;
     }
     
     .prev_button{
         position: absolute;
         margin-left: 20%;
-        left: -20px;
+        left: -40px;
         text-decoration: none;
         font-size: 40px;
+        color: #86a0de;
     }
     
-    .login{
-        font-size: 35px;
+    .register{
+        font-size: 40px;
         padding-top: 30px;
+        text-align: center;
     }
     
-    .login_form{
+    .register_form{
         margin-top: 10px;
         margin-bottom: 50px;
+        margin-left: 10%;
+        margin-right: 20%;
     }
     
     .box{
         margin-top: 20px;
+        font-size: 20px;
+    }
+    
+    .inputbox{
         margin-bottom: 20px;
     }
     
+    .Required{
+        background-color: red;
+        color: #FFF;
+        font-size: 13px;
+    }
+    
     input[type="text"],input[type="password"]{
-        width: 40%;
-        height: 40px;
+        width: 60%;
+        height: 50px;
         font-size: 20px;
         padding-left: 30px;
-        padding-right: 30px;
+        padding-right: 100px;
         border: double 5px #86a0de;
         border-radius: 50px;
     }
     
-    input[type="submit"]{
-        font-size: 20px;
+    .transition_login{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    
+    .register-button{
+        font-size: 25px;
         width: 50%;
         color: #fff;
         background-color: #1ee3cf;
-        padding: 0px 30px 0px 30px;
+        padding: 0px 50px 0px 50px;
+        margin-bottom: 20px;
         border-radius: 50px;
         border: solid 1px #86a0de;
     }
-    
-    input[type="submit"]:hover{
-        color: #1ee3cf;
-        background-color: #fff;
-    }
-    
-    .transition_login{
-        padding-bottom: 50px;
-    }
-    
-    .error{
-        text-align: center;
-        color: red;
-        font-size: 0.8rem;
-    }
-
-    
 }

@@ -2,9 +2,14 @@
 session_start();
 $acountid = $_SESSION['userid'];
  require_once 'db_connect.php';
- $postname = $_POST["title"];
- $content = $_POST["content"];
- $releaseid = $_POST["Release"];
+
+ $postname=$_POST["title"];
+ $content=$_POST["content"];
+ if(isset($_POST["Release"])){
+    $releaseid=0;
+ }else{
+    $releaseid=1;
+ }
  $filename = $_FILES['image']['name'];
 
 $sql = "INSERT INTO post (acountid,postname,content,releaseid,imgpas) values (:acountid,:postname,:content,:releaseid,:imgpas)";

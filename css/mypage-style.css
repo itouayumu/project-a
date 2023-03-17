@@ -39,6 +39,12 @@ a:hover{
     margin-right: 15%;
 }
 
+.acimg{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
 .acname{
     font-size: 30px;
     color: #fff;
@@ -62,6 +68,12 @@ a:hover{
 hr{
     margin-top: 0px;
     border-top: 6px solid #87a2e1;
+}
+
+.postimg{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .postlink {
@@ -106,4 +118,252 @@ hr{
 .botan:hover{
     color: #1ee3cf;
     background-color: #fff;
+}
+
+.homepost{
+    display: block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #1ee3cf;
+    
+    text-decoration: none;
+    text-align: center;
+    font-size: 4rem;
+
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 5;
+}
+
+.homepura{
+    color: #FFF;
+}
+
+.homepost .caption {
+	font-size: 20px;
+	text-align: center;
+	padding-top: 35px;
+	color:rgb(47, 0, 255);
+    font-weight: 500;
+}
+
+.homepost .mask {
+	width: 100%;
+	height:	100%;
+	position: absolute;	/* 絶対位置指定 */
+	top: 0;
+	left: 0;
+	opacity: 0;	/* マスクを表示しない */
+	-webkit-transition:	all 0.2s ease;
+    border-radius: 50%;
+	transition:	all 0.2s ease;
+}
+
+.homepost:hover .mask {
+	opacity: 1;	/* マスクを表示する */
+}
+
+.homepost:hover{
+    /* color: #1ee3cf; */
+    background-color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+    .myheader{
+        z-index: 9;
+    }
+    
+    .mypul {
+        overflow:hidden;
+        list-style:none;
+        z-index: 10;
+        margin: 0 auto;
+        margin-right: 0;
+        margin-left: auto;
+        width: 65%;
+    }
+        
+    .mypul li {
+        font-size: 20px;
+        display: inline-block;
+        padding: 20px 10px 20px 10px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 800;
+    }
+    
+    a:hover{
+        color: #1ee3cf;
+    }
+    
+    .mypage{
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 100px;
+        padding-bottom: 150px;
+    }
+    
+    .acstyle{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .acimg{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    
+    .acname{
+        font-size: 25px;
+        color: #fff;
+        font-weight: 800;
+        text-align: center;
+        margin-top: 50%;
+        margin-bottom: 50%;
+    }
+    
+    .poststyle{
+        margin-top: 0px;
+        /* margin-left: 3%;
+        margin-right: 3%; */
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .posttitle{
+        font-size: 25px;
+        padding-top: 50px;
+    }
+    
+    hr{
+        margin-top: 0px;
+        border-top: 6px solid #87a2e1;
+    }
+    
+    .postimg{
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .postlink {
+        width: 280px;
+        height:	 100px;
+        /* overflow: hidden; */
+        margin:	 10px 8px 10px 16px;
+        position: relative;
+        z-index: 4;
+    }
+    .postlink .caption {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 80px;
+        color: blue;
+    }
+    .postlink .mask {
+        width:	100%;
+        height:	97%;
+        position: absolute;	/* 絶対位置指定 */
+        top: 0;
+        left: 0;
+        opacity: 0;	/* マスクを表示しない */
+        background-color: rgba(255,255,255,0.5);	/* マスクは半透明 */
+        -webkit-transition:	all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    .postlink:hover .mask {
+        opacity: 1;	/* マスクを表示する */
+    }
+    
+    .botan{
+        font-size: 20px;
+        width: 100%;
+        color: #fff;
+        background-color: #1ee3cf;
+        padding: 10px 50px 10px 50px;
+        margin-left: 10px;
+        border-radius: 30px;
+    }
+    
+    .botan:hover{
+        color: #1ee3cf;
+        background-color: #fff;
+    }
+    
+    .homepost{
+        display: block;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        background-color: #1ee3cf;
+        
+        text-decoration: none;
+        text-align: center;
+        font-size: 4rem;
+    
+        position: fixed;
+        bottom: 20px;
+        right: 40px;
+        z-index: 5;
+    }
+    
+    .homepura{
+        color: #FFF;
+    }
+    
+    .homepost{
+        display: block;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background-color: #1ee3cf;
+        
+        text-decoration: none;
+        text-align: center;
+        font-size: 55px;
+    
+        position: fixed;
+        bottom: 15px;
+        right: 30px;
+        z-index: 5;
+    }
+    
+    .homepura{
+        color: #FFF;
+    }
+    
+    .homepost .caption {
+        font-size: 20px;
+        text-align: center;
+        padding-top: 30px;
+        color:rgb(47, 0, 255);
+        font-weight: 500;
+    }
+    
+    .homepost .mask {
+        width: 100%;
+        height:	100%;
+        position: absolute;	/* 絶対位置指定 */
+        top: 0;
+        left: 0;
+        opacity: 0;	/* マスクを表示しない */
+        -webkit-transition:	all 0.2s ease;
+        border-radius: 50%;
+        transition:	all 0.2s ease;
+    }
+    
+    .homepost:hover .mask {
+        opacity: 1;	/* マスクを表示する */
+    }
+    
+    .homepost:hover{
+        /* color: #1ee3cf; */
+        background-color: #fff;
+    }
 }

@@ -41,7 +41,7 @@
             <?php
                 foreach($result1 as $data1){  
             echo <<<"EOD"
-                    <td style="width:20%;"><img class="acimg" src="img/{$data1['cionid']}" alt="アイコン写真" style="width: 200px; height: 200px;"></td>
+                    <td style="width:20%;"><img class="acimg" src="img/{$data1['cionid']}" alt="アイコン写真"></td>
                     <td style="width:80%;" class="acname">{$data1['name']}</td>
             EOD;
                 }
@@ -60,14 +60,14 @@
                     </tr>
                     <tr>
                         <td rowspan="2" style="width:50%;" class="postlink">
-                            <a href="#">
-                                <img class="" src="img/{$data2['imgid']}" alt="記事写真" style="width: 100%; height: 200px; object-fit: cover;">
+                            <a href="postdata.php?id={$data2['id']}">
+                                <img class="postimg" src="img/{$data2['imgid']}" alt="記事写真">
                                 <div class="mask">
                                     <div class="caption">詳細へ</div>
                                 </div>
                             </a>
                         </td>
-                        <td><a href="" class="botan">編集</a></td>
+                        <td><a href="updateform.php?id={$data2['id']}" class="botan">編集</a></td>
                     </tr>
                     <tr>
                         <td><a href="delete.php?id={$data2['id']}" class="botan">削除</a></td>
@@ -78,5 +78,13 @@
             </table>
         </div>
     </div>
+    <a href="post.php">
+    <div class="homepost">
+        <div class="homepura">＋</div>
+        <div class="mask">
+            <div class="caption">投稿する</div>
+        </div>
+    </div>
+    </a>
 </body>
 </html>
