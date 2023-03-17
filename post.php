@@ -106,6 +106,7 @@ function set_img(sel_val)
 <form class="postform" action="home.php" method="POST">
   <input type="submit"class="shakin2" value="戻る">
 </form>
+
 </body>
 
 </html>
