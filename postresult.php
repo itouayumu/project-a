@@ -6,7 +6,11 @@ $acountid = $_SESSION['userid'];
 //  var_dump($_SESSION);
  $postname=$_POST["title"];
  $content=$_POST["content"];
- $releaseid=$_POST["Release"];
+ if(isset($_POST["Release"])){
+    $releaseid=0;
+ }else{
+    $releaseid=1;
+ }
  $imgid=$_POST["img"];
 
 
