@@ -32,6 +32,7 @@ echo $postid;
     ２今インサートした記事のIDを取得
     ３取得したIDをファイル名につけてアップロード*/
 
+    
         header("Location:home.php");
        exit(); 
   ?>
