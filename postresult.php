@@ -2,46 +2,36 @@
 session_start();
 $acountid = $_SESSION['userid'];
  require_once 'db_connect.php';
+ $postname = $_POST["title"];
+ $content = $_POST["content"];
+ $releaseid = $_POST["Release"];
+ $filename = $_FILES['image']['name'];
+
+$sql = "INSERT INTO post (acountid,postname,content,releaseid,imgpas) values (:acountid,:postname,:content,:releaseid,:imgpas)";
+$stm = $pdo->prepare($sql);
+$stm->bindValue(':acountid',$acountid , PDO::PARAM_INT);
+$stm->bindValue(':postname',$postname , PDO::PARAM_STR);
+$stm->bindValue(':content',$content , PDO::PARAM_STR);
+$stm->bindValue(':releaseid',$releaseid , PDO::PARAM_INT);
+$stm->bindValue(':imgpas',$filename , PDO::PARAM_INT);
+      $stm->execute();
+      $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+      $postid = $pdo -> lastInsertId();
+echo $postid;
+
  var_dump($_FILES);
- if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-    // 画像を取得
-
-} else {
-    // 画像を保存
-    if (!empty($_FILES['image']['name'])) {
-        $name = $_FILES['image']['name'];
-        $type = $_FILES['image']['type'];
-        $content = file_get_contents($_FILES['image']['tmp_name']);
-        $size = $_FILES['image']['size'];
-
-        $sql = 'INSERT INTO images(image_name, image_type, image_content, image_size, created_at)
-                VALUES (:image_name, :image_type, :image_content, :image_size, now())';
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':image_name', $name, PDO::PARAM_STR);
-        $stmt->bindValue(':image_type', $type, PDO::PARAM_STR);
-        $stmt->bindValue(':image_content', $content, PDO::PARAM_STR);
-        $stmt->bindValue(':image_size', $size, PDO::PARAM_INT);
-        $stmt->execute();
-    }
-  
-}
-
-$sql = 'SELECT id FROM images WHERE image_name='".$name."';
-
-$stm2 = $pdo->prepare($sql);
-$stm2->bindValue(':id', $id, PDO::PARAM_INT);
-$stm2->execute();
-$result2 = $stm2->fetchAll(PDO::FETCH_ASSOC);
-
-  $postname = $_POST["title"];
-  $content = $_POST["content"];
-  $releaseid = $_POST["Release"];
+ if(!empty($_FILES)){
 
 
-        $sql3 = "INSERT INTO post (id,acountid,postname,content,releaseid,timestump,imgid,deleteid) VALUES(default,'" .$acountid . "', '" .$postname . "', '" .$content . "','" .$releaseid . "',default,'" .$result2['imgid']. "',default)";
-       $stm = $pdo->prepare($sql3);
-       $stm->execute();
-       $result = $stm->fetchAll(PDO::FETCH_ASSOC);
-      header("Location:home.php");
-     exit(); 
+ $uploaded_path = 'img/'.$postid.$filename;
+ echo $uploaded_path;
+ $result = move_uploaded_file($_FILES['image']['tmp_name'],$uploaded_path);
+ }
+ /*１記事をインサートする
+    ２今インサートした記事のIDを取得
+    ３取得したIDをファイル名につけてアップロード*/
+
+        header("Location:home.php");
+       exit(); 
   ?>

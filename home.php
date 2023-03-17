@@ -39,11 +39,13 @@
 
     <div class="wrapper">
     <?php
+   
     foreach($result as $data){  
+        $pas="img/".$data['id'].$data['imgpas'];
         echo <<<"EOD"
-            <a href="#" class="posta">
+            <a href="postdata.php?id={$data['id']}" class="posta">
             <div>
-                <img class="" src="img/{$data['imgid']}" alt="記事写真" style="width: 100%; height: 200px;"></p>
+                <img class="postimg" src="$pas" alt="記事写真"style="width: 100%; height: 200px;"></p>
                 <p>{$data['postname']}</p>
             </div>
             </a>
@@ -51,7 +53,8 @@
             }
         ?>
     </div>
-
+    <?php if(empty($_SESSION)){ ?>
+        <?php }else{ ?>
     <a href="post.php">
     <div class="homepost">
         <div class="homepura">＋</div>
@@ -60,6 +63,6 @@
         </div>
     </div>
     </a>
-
+    <?php } ?>
 </body>
 </html>
