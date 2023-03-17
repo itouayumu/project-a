@@ -83,3 +83,86 @@ input[type="text"],input[type="password"]{
     color: #1ee3cf;
     background-color: #fff;
 }
+
+@media screen and (max-width: 480px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    body{
+        background-color:#86a0de;
+    }
+    
+    .contents{
+        background-color: #FFF;
+        border-radius: 30px;
+        margin-top: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 50px;
+    }
+    
+    .prev_button{
+        position: absolute;
+        margin-left: 20%;
+        left: -40px;
+        text-decoration: none;
+        font-size: 40px;
+        color: #86a0de;
+    }
+    
+    .register{
+        font-size: 40px;
+        padding-top: 30px;
+        text-align: center;
+    }
+    
+    .register_form{
+        margin-top: 10px;
+        margin-bottom: 50px;
+        margin-left: 10%;
+        margin-right: 20%;
+    }
+    
+    .box{
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    
+    .inputbox{
+        margin-bottom: 20px;
+    }
+    
+    .Required{
+        background-color: red;
+        color: #FFF;
+        font-size: 13px;
+    }
+    
+    input[type="text"],input[type="password"]{
+        width: 60%;
+        height: 50px;
+        font-size: 20px;
+        padding-left: 30px;
+        padding-right: 100px;
+        border: double 5px #86a0de;
+        border-radius: 50px;
+    }
+    
+    .transition_login{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    
+    .register-button{
+        font-size: 25px;
+        width: 50%;
+        color: #fff;
+        background-color: #1ee3cf;
+        padding: 0px 50px 0px 50px;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        border: solid 1px #86a0de;
+    }
+}

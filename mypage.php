@@ -41,7 +41,7 @@
             <?php
                 foreach($result1 as $data1){  
             echo <<<"EOD"
-                    <td style="width:20%;"><img class="acimg" src="img/{$data1['cionid']}" alt="アイコン写真" style="width: 200px; height: 200px;"></td>
+                    <td style="width:20%;"><img class="acimg" src="img/{$data1['cionid']}" alt="アイコン写真"></td>
                     <td style="width:80%;" class="acname">{$data1['name']}</td>
             EOD;
                 }
@@ -61,7 +61,7 @@
                     <tr>
                         <td rowspan="2" style="width:50%;" class="postlink">
                             <a href="postdata.php?id={$data2['id']}">
-                                <img class="" src="img/{$data2['imgid']}" alt="記事写真" style="width: 100%; height: 200px; object-fit: cover;">
+                                <img class="postimg" src="img/{$data2['imgid']}" alt="記事写真">
                                 <div class="mask">
                                     <div class="caption">詳細へ</div>
                                 </div>
