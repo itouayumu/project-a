@@ -29,7 +29,7 @@
     if($result['releaseid'] === 0){
         $release_y= "checked";
     }elseif($result['releaseid'] === 1){
-        $release_n = "checked";
+        $release_y = "";
     }
 
     if($result['imgid'] === "k-autodoa.jpeg"){
@@ -144,11 +144,15 @@
         </SCRIPT>
     </select>
     <br><br>
-        <img name=img_area border=1 style="width: 500px; height: 200px; object-fit: cover;">
+        <img name=img_area border=1 class="selectimg">
     <br><br>
 
-    <label><input type="radio" name="releaseid" value="0" <?php echo $release_y; ?>>公開</label>
-    <label><input type="radio" name="releaseid" value="1" <?php echo $release_n; ?>>非公開</label><br><br>
+    <div class="switchArea">
+        <input type="checkbox" id="switch1" name="releaseid" value="0" <?php echo $release_y; ?>>
+        <label for="switch1"><span></span></label>
+        <div id="swImg"></div>
+    </div>
+
     <input type="submit" value="変更" name="botan"><br>
     <a href="mypage.php" name="a">戻る</a>
 </form>

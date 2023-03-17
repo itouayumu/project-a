@@ -84,74 +84,7 @@ function set_img(sel_val)
         <label for="switch1"><span></span></label>
         <div id="swImg"></div>
       </div>
-      <style type="text/css">
-
-        /* === ボタンを表示するエリア ============================== */
-        .switchArea {
-          line-height    : 60px;                /* 1行の高さ          */
-          letter-spacing : 0;                   /* 文字間             */
-          text-align     : center;              /* 文字位置は中央     */
-          font-size      : 27px;                /* 文字サイズ         */
-
-          position       : relative;            /* 親要素が基点       */
-          margin         : auto;                /* 中央寄せ           */
-          margin-top     : 50px;
-          width          : 150px;               /* ボタンの横幅       */
-          background     : #AAECFC;                /* デフォルト背景色   */
-        }
-
-        /* === チェックボックス ==================================== */
-        .switchArea input[type="checkbox"] {
-          display        : none;            /* チェックボックス非表示 */
-        }
-
-        /* === チェックボックスのラベル（標準） ==================== */
-        .switchArea label {
-          display        : block;               /* ボックス要素に変更 */
-          box-sizing     : border-box;          /* 枠線を含んだサイズ */
-          height         : 60px;                /* ボタンの高さ       */
-          border         : 4px solid rgba(134, 160, 222, 0.70);   /* 未選択タブの枠線 */
-          border-radius  : 30px;                /* 角丸               */
-        }
-
-        /* === チェックボックスのラベル（ONのとき） ================ */
-        .switchArea input[type="checkbox"]:checked +label {
-          border-color   : #86a0de;             /* 選択タブの枠線     */
-        }
-
-        /* === 表示する文字（標準） ================================ */
-        .switchArea label span:after{
-          content        : "非公開";               /* 表示する文字       */
-          padding        : 0 0 0 45px;          /* 表示する位置       */
-          color          : rgba(134, 160, 222, 0.55);             /* 文字色             */
-        }
-
-        /* === 表示する文字（ONのとき） ============================ */
-        .switchArea  input[type="checkbox"]:checked + label span:after{
-          content        : "公開";                /* 表示する文字       */
-          padding        : 0 36px 0 0;          /* 表示する位置       */
-          color          : #86a0de;             /* 文字色             */
-        }
-
-        /* === 丸部分のSTYLE（標準） =============================== */
-        .switchArea #swImg {
-          position       : absolute;            /* 親要素からの相対位置*/
-          width          : 52px;                /* 丸の横幅           */
-          height         : 52px;                /* 丸の高さ           */
-          background     : rgba(134, 160, 222, 0.55);             /* カーソルタブの背景 */
-          top            : 4px;                 /* 親要素からの位置   */
-          left           : 4px;                 /* 親要素からの位置   */
-          border-radius  : 26px;                /* 角丸               */
-          transition     : .2s;                 /* 滑らか変化         */
-        }
-
-        /* === 丸部分のSTYLE（ONのとき） =========================== */
-        .switchArea input[type="checkbox"]:checked ~ #swImg {
-          transform      : translateX(90px);    /* 丸も右へ移動       */
-          background     : #86a0de;             /* カーソルタブの背景 */
-        }
-      </style>
-
+      
      <script>
        const app = new Vue({
            el: '#app',
