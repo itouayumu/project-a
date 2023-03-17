@@ -5,7 +5,11 @@
     $name = $_POST['name'];
     $content = $_POST['content'];
     $postimg = $_POST['postimg'];
-    $releaseid = $_POST['releaseid'];
+    if(isset($_POST["releaseid"])){
+        $releaseid=0;
+     }else{
+        $releaseid=1;
+     }
 
     $sql = "UPDATE post SET postname = :postname,content = :content,releaseid = :releaseid,imgid = :imgid WHERE id = :id";
 
