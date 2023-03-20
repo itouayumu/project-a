@@ -101,7 +101,7 @@ a:hover{
 }
 
 .command a:hover{
-    color: #87a2e1;
+    color: #3676e0;
 }
 
 .posttitle{
@@ -115,7 +115,7 @@ a:hover{
 
 hr{
     margin-top: 0px;
-    border-top: 6px solid #87a2e1;
+    border-top: 6px solid #3676e0;
 }
 
 .kijiimg{
@@ -279,7 +279,7 @@ hr{
     }
     
     .command a:hover{
-        color: #87a2e1;
+        color: #3676e0;
     }
     
     .posttitle{
@@ -293,7 +293,7 @@ hr{
     
     hr{
         margin-top: 0px;
-        border-top: 6px solid #87a2e1;
+        border-top: 6px solid #3676e0;
     }
     
     .kijiimg{

@@ -59,7 +59,7 @@ img{
  
     height: 45%;
     width: 44%;
-    box-shadow: 10px 10px 0 #87a2e1;
+    box-shadow: 10px 10px 0 #3676e0;
     object-fit: cover;
     display: flex;
     position:absolute; top: 45; right:5%;
@@ -177,7 +177,7 @@ img{
   img{
     height: 150px;
     width: 96%;
-    box-shadow: 10px 10px 0 #87a2e1;
+    box-shadow: 10px 10px 0 #3676e0;
     object-fit: cover;
     margin-left: 2%;
     margin-right: 2%;

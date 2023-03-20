@@ -42,7 +42,7 @@ a:hover{
 }
 
 .posta{
-    color: #87a2e1;
+    color: #3676e0;
     font-weight: 800;
 }
 
@@ -75,7 +75,7 @@ a:hover{
 }
 
 .wrapper img {
-    box-shadow: 10px 10px 0 #87a2e1;
+    box-shadow: 10px 10px 0 #3676e0;
   
     margin-top: 6%;
     /* margin-bottom: 50px; */
@@ -184,7 +184,7 @@ a:hover{
     }
     
     .posta{
-        color: #87a2e1;
+        color: #3676e0;
         font-weight: 800;
     }
     
@@ -218,7 +218,7 @@ a:hover{
     }
 
     .wrapper img {
-        box-shadow: 10px 10px 0 #87a2e1;
+        box-shadow: 10px 10px 0 #3676e0;
       
         margin-top: 6%;
         transition: transform .2s ease;
