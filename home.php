@@ -41,7 +41,7 @@
     <?php
 
     foreach($result as $data){  
-        $pas="img/".$data['id'].$data['imgpas'];
+        $pas="img/".$data['id'].$data['imgid'];
         echo <<<"EOD"
             <a href="postdata.php?id={$data['id']}" class="posta">
             <div>
