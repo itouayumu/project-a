@@ -12,13 +12,13 @@ $acountid = $_SESSION['userid'];
  }
  $filename = $_FILES['image']['name'];
 
-$sql = "INSERT INTO post (acountid,postname,content,releaseid,imgpas) values (:acountid,:postname,:content,:releaseid,:imgpas)";
+$sql = "INSERT INTO post (acountid,postname,content,releaseid,imgid) values (:acountid,:postname,:content,:releaseid,:imgid)";
 $stm = $pdo->prepare($sql);
 $stm->bindValue(':acountid',$acountid , PDO::PARAM_INT);
 $stm->bindValue(':postname',$postname , PDO::PARAM_STR);
 $stm->bindValue(':content',$content , PDO::PARAM_STR);
 $stm->bindValue(':releaseid',$releaseid , PDO::PARAM_INT);
-$stm->bindValue(':imgpas',$filename , PDO::PARAM_INT);
+$stm->bindValue(':imgid',$filename , PDO::PARAM_INT);
       $stm->execute();
       $result = $stm->fetchAll(PDO::FETCH_ASSOC);
 
