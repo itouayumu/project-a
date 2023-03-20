@@ -107,7 +107,9 @@
             <div class="acstyle">
                 <table style="width:100%;" class="actable">
                     <?php
+                    
                         foreach($result2 as $data2){  
+                           
                         echo <<<"EOD"
                                 <td style="width:20%;"><img class="acimg" src="img/{$data2['cionid']}" alt="アイコン写真"></td>
                                 <td style="width:80%;" class="acname">{$data2['name']}</td>
@@ -120,6 +122,7 @@
             <div class="data">
                 <?php
                     foreach($result1 as $data1){
+                        $pas="img/".$data1['id'].$data1['imgid'];
                         if(isset($_SESSION['userid'])){
                             if($_SESSION['userid'] === $data1['acountid']){
                                 echo <<<"EOD"
@@ -132,7 +135,7 @@
                         }
                     echo <<<"EOD"
                             <p class="posttitle">{$data1['postname']}<hr></p>
-                            <img class="kijiimg" src="img/{$data1['imgid']}" alt="記事写真">
+                            <img class="kijiimg" src=" $pas" alt="記事写真">
                             <div class="databunstyle">
                                 <p class="databun">$content</p>
                                 <p class="date">{$data1['timestump']}</div>

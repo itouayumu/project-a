@@ -10,25 +10,7 @@
     <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/style.css">
     <title>投稿ページ</title>
-    <SCRIPT LANGUAGE="JavaScript">
-
-var list_img = new Array();
-list_img[0] = new Array("img/k-autodoa.jpeg","アウトドア");
-list_img[1] = new Array("img/k-diy.jpg","DIY");
-list_img[2] = new Array("img/k-game.png","ゲーム");
-list_img[3] = new Array("img/k-ivennto.png","イベント");
-list_img[4] = new Array("img/k-myhome.jpg","マイホーム");
-list_img[5] = new Array("img/k-osyare.jpg","おしゃれ");
-list_img[6] = new Array("img/k-syoku.jpg","食");
-list_img[7] = new Array("img/k-syopping.jpg","ショッピング");
-list_img[8] = new Array("img/k-syumi.png","趣味");
-list_img[9] = new Array("img/k-zatudann.png","雑談");
-function set_img(sel_val)
-{
-  img_area.src = list_img[sel_val][0];
-}
-
-</SCRIPT>
+  
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>

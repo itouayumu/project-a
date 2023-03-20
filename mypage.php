@@ -53,6 +53,7 @@
             <table style="width:100%;" class="posttable">
                 <?php
                     foreach($result2 as $data2){  
+                        $pas="img/".$data2['id'].$data2['imgid'];
                 echo <<<"EOD"
 
                     <tr>
@@ -61,7 +62,7 @@
                     <tr>
                         <td rowspan="2" style="width:50%;" class="postlink">
                             <a href="postdata.php?id={$data2['id']}">
-                                <img class="postimg" src="img/{$data2['imgid']}" alt="記事写真">
+                                <img class="postimg" src="$pas" alt="記事写真">
                                 <div class="mask">
                                     <div class="caption">詳細へ</div>
                                 </div>
