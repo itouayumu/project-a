@@ -13,18 +13,7 @@
 
     $release_y = "";
     $release_n = "";
-    $postimg = [
-        "アウトドア" => "",
-        "DIY" => "",
-        "ゲーム" => "",
-        "イベント" => "",
-        "マイホーム" => "",
-        "おしゃれ" => "",
-        "食" => "",
-        "ショッピング" => "",
-        "趣味" => "",
-        "雑談" => "",
-    ];
+  
 
     if($result['releaseid'] === 0){
         $release_y= "checked";
@@ -32,36 +21,7 @@
         $release_y = "";
     }
 
-    if($result['imgid'] === "k-autodoa.jpeg"){
-        $postimg['アウトドア'] = "selected";
-    }
-    if($result['imgid'] === "k-diy.jpg"){
-        $postimg['DIY'] = "selected";
-    }
-    if($result['imgid'] === "k-game.png"){
-        $postimg['ゲーム'] = "selected";
-    }
-    if($result['imgid'] === "k-ivennto.png"){
-        $postimg['イベント'] = "selected";
-    }
-    if($result['imgid'] === "k-myhome.jpg"){
-        $postimg['マイホーム'] = "selected";
-    }
-    if($result['imgid'] === "k-osyare.jpg"){
-        $postimg['おしゃれ'] = "selected";
-    }
-    if($result['imgid'] === "k-syoku.jpg"){
-        $postimg['食'] = "selected";
-    }
-    if($result['imgid'] === "k-syopping.jpg"){
-        $postimg['ショッピング'] = "selected";
-    }
-    if($result['imgid'] === "k-syumi.png"){
-        $postimg['趣味'] = "selected";
-    }
-    if($result['imgid'] === "k-zatudann.png"){
-        $postimg['雑談'] = "selected";
-    }
+    
 
 
 ?>
@@ -96,6 +56,7 @@
     </SCRIPT>
 
     <title>change</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
 <header class="changeheader">
@@ -130,28 +91,46 @@
   </li>
 </ol>
 </div>
-<form action="update.php?id=<?php echo $id; ?>" method="post">
+<form action="update.php?id=<?php echo $id; ?>" method="post"enctype="multipart/form-data">
     <p>記事タイトル</p>
     <input type="text" name="name" value="<?php echo $result['postname'] ?>"><br>
     <p>内容</p>
     <textarea name="content"><?php echo $result['content'] ?></textarea><br>
     <p>記事画像</p>
-    <select onchange="set_img(this.selectedIndex)"name="postimg">
-        <SCRIPT language=javascript>
-            for(nn=0;nn<list_img.length;nn++) {
-                document.write("<option value=" + list_img[nn][2] + ">" + list_img[nn][1]);
-            }
-        </SCRIPT>
-    </select>
-    <br><br>
-        <img name=img_area border=1 class="selectimg">
-    <br><br>
+    <div id="app">
+      <div class="preview_zone">
+        <img :src="url" alt="ここにプレビューが表示されます">
+      </div>
+      <div class="upload_zone">
+        <input type="file" class="input_file" ref="preview" @change="previewImage"name="image">  
+      </div>
+    </div>
+      <div class="switchArea">
+        <input type="checkbox" id="switch1" name="Release" value="0" checked>
+        <label for="switch1"><span></span></label>
+        <div id="swImg"></div>
+      </div>
+      
+     <script>
+       const app = new Vue({
+           el: '#app',
+           data: {
+               url: '',
+           },
+           methods: {
+               previewImage() {
+                   let image = this.$refs.preview.files[0];
+                   this.url = URL.createObjectURL(image);
+               }
+           }
+       })
+     </script>
 
-    <div class="switchArea">
+    <!-- <div class="switchArea">
         <input type="checkbox" id="switch1" name="releaseid" value="0" <?php echo $release_y; ?>>
         <label for="switch1"><span></span></label>
         <div id="swImg"></div>
-    </div>
+    </div> -->
 
     <input type="submit" value="変更" name="botan"><br>
     <a href="mypage.php" name="a">戻る</a>
