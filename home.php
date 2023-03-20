@@ -39,7 +39,7 @@
 
     <div class="wrapper">
     <?php
-   
+
     foreach($result as $data){  
         $pas="img/".$data['id'].$data['imgid'];
         echo <<<"EOD"

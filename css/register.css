@@ -22,7 +22,7 @@ body{
     left: 50px;
     text-decoration: none;
     font-size: 40px;
-    color: #86a0de;
+    color: #3676e0;
 }
 
 .register{
@@ -59,7 +59,7 @@ input[type="text"],input[type="password"]{
     font-size: 20px;
     padding-left: 30px;
     padding-right: 100px;
-    border: double 5px #86a0de;
+    border: double 5px #3676e0;
     border-radius: 50px;
 }
 
@@ -76,7 +76,7 @@ input[type="text"],input[type="password"]{
     padding: 0px 50px 0px 50px;
     margin-bottom: 20px;
     border-radius: 50px;
-    border: solid 1px #86a0de;
+    border: solid 1px #3676e0;
 }
 
 .register-button:hover{
@@ -109,7 +109,7 @@ input[type="text"],input[type="password"]{
         left: -40px;
         text-decoration: none;
         font-size: 40px;
-        color: #86a0de;
+        color: #3676e0;
     }
     
     .register{
@@ -146,7 +146,7 @@ input[type="text"],input[type="password"]{
         font-size: 20px;
         padding-left: 30px;
         padding-right: 100px;
-        border: double 5px #86a0de;
+        border: double 5px #3676e0;
         border-radius: 50px;
     }
     
@@ -163,6 +163,6 @@ input[type="text"],input[type="password"]{
         padding: 0px 50px 0px 50px;
         margin-bottom: 20px;
         border-radius: 50px;
-        border: solid 1px #86a0de;
+        border: solid 1px #3676e0;
     }
 }

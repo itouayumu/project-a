@@ -54,7 +54,7 @@ input[type="text"]{
   font-size: 20px;
   padding-left: 30px;
   padding-right: 30px;
-  border: double 5px #86a0de;
+  border: double 5px #3676e0;
   border-radius: 50px;
 }
 
@@ -63,12 +63,12 @@ textarea {
   width:50%;
   height:400px;
   font-size: 20px;
-  border: double 5px #86a0de;
+  border: double 5px #3676e0;
   border-radius: 10px;
 }
 
 select, option{
-  border:#86a0de 3px inset;
+  border:#3676e0 3px inset;
 }
 
 select{
@@ -141,7 +141,7 @@ input[type="submit"]:hover{
   margin-top     : 50px;
   margin-bottom: 50px;
   width          : 150px;               /* ボタンの横幅       */
-  background     : #AAECFC;                /* デフォルト背景色   */
+  /* background     : #AAECFC;                デフォルト背景色   */
 }
 
 /* === チェックボックス ==================================== */
@@ -154,27 +154,27 @@ input[type="submit"]:hover{
   display        : block;               /* ボックス要素に変更 */
   box-sizing     : border-box;          /* 枠線を含んだサイズ */
   height         : 60px;                /* ボタンの高さ       */
-  border         : 4px solid rgba(134, 160, 222, 0.70);   /* 未選択タブの枠線 */
+  border         : 4px solid rgba(54, 118, 224, 0.70);   /* 未選択タブの枠線 */
   border-radius  : 30px;                /* 角丸               */
 }
 
 /* === チェックボックスのラベル（ONのとき） ================ */
 .switchArea input[type="checkbox"]:checked +label {
-  border-color   : #86a0de;             /* 選択タブの枠線     */
+  border-color   : #3676e0;             /* 選択タブの枠線     */
 }
 
 /* === 表示する文字（標準） ================================ */
 .switchArea label span:after{
   content        : "非公開";               /* 表示する文字       */
   padding        : 0 0 0 45px;          /* 表示する位置       */
-  color          : rgba(134, 160, 222, 0.55);             /* 文字色             */
+  color          : rgba(54, 118, 224, 0.55);             /* 文字色             */
 }
 
 /* === 表示する文字（ONのとき） ============================ */
 .switchArea  input[type="checkbox"]:checked + label span:after{
   content        : "公開";                /* 表示する文字       */
   padding        : 0 36px 0 0;          /* 表示する位置       */
-  color          : #86a0de;             /* 文字色             */
+  color          : #3676e0;             /* 文字色             */
 }
 
 /* === 丸部分のSTYLE（標準） =============================== */
@@ -182,7 +182,7 @@ input[type="submit"]:hover{
   position       : absolute;            /* 親要素からの相対位置*/
   width          : 52px;                /* 丸の横幅           */
   height         : 52px;                /* 丸の高さ           */
-  background     : rgba(134, 160, 222, 0.55);             /* カーソルタブの背景 */
+  background     : rgba(54, 118, 224, 0.55);             /* カーソルタブの背景 */
   top            : 4px;                 /* 親要素からの位置   */
   left           : 4px;                 /* 親要素からの位置   */
   border-radius  : 26px;                /* 角丸               */
@@ -192,7 +192,7 @@ input[type="submit"]:hover{
 /* === 丸部分のSTYLE（ONのとき） =========================== */
 .switchArea input[type="checkbox"]:checked ~ #swImg {
   transform      : translateX(90px);    /* 丸も右へ移動       */
-  background     : #86a0de;             /* カーソルタブの背景 */
+  background     : #3676e0;             /* カーソルタブの背景 */
 }
 
 @media screen and (max-width: 480px) {
@@ -252,7 +252,7 @@ input[type="submit"]:hover{
     font-size: 18px;
     padding-left: 30px;
     padding-right: 30px;
-    border: double 5px #86a0de;
+    border: double 5px #3676e0;
     border-radius: 50px;
   }
 
@@ -261,12 +261,12 @@ input[type="submit"]:hover{
     width:70%;
     height:400px;
     font-size: 20px;
-    border: double 5px #86a0de;
+    border: double 5px #3676e0;
     border-radius: 10px;
   }
 
   select, option{
-    border:#86a0de 3px inset;
+    border:#3676e0 3px inset;
   }
 
   select{
@@ -352,27 +352,27 @@ input[type="submit"]:hover{
     display        : block;               /* ボックス要素に変更 */
     box-sizing     : border-box;          /* 枠線を含んだサイズ */
     height         : 60px;                /* ボタンの高さ       */
-    border         : 4px solid rgba(134, 160, 222, 0.70);   /* 未選択タブの枠線 */
+    border         : 4px solid rgba(54, 118, 224, 0.70);   /* 未選択タブの枠線 */
     border-radius  : 30px;                /* 角丸               */
   }
 
   /* === チェックボックスのラベル（ONのとき） ================ */
   .switchArea input[type="checkbox"]:checked +label {
-    border-color   : #86a0de;             /* 選択タブの枠線     */
+    border-color   : #3676e0;             /* 選択タブの枠線     */
   }
 
   /* === 表示する文字（標準） ================================ */
   .switchArea label span:after{
     content        : "非公開";               /* 表示する文字       */
     padding        : 0 0 0 45px;          /* 表示する位置       */
-    color          : rgba(134, 160, 222, 0.55);             /* 文字色             */
+    color          : rgba(54, 118, 224, 0.55);             /* 文字色             */
   }
 
   /* === 表示する文字（ONのとき） ============================ */
   .switchArea  input[type="checkbox"]:checked + label span:after{
     content        : "公開";                /* 表示する文字       */
     padding        : 0 36px 0 0;          /* 表示する位置       */
-    color          : #86a0de;             /* 文字色             */
+    color          : #3676e0;             /* 文字色             */
   }
 
   /* === 丸部分のSTYLE（標準） =============================== */
@@ -380,7 +380,7 @@ input[type="submit"]:hover{
     position       : absolute;            /* 親要素からの相対位置*/
     width          : 52px;                /* 丸の横幅           */
     height         : 52px;                /* 丸の高さ           */
-    background     : rgba(134, 160, 222, 0.55);             /* カーソルタブの背景 */
+    background     : rgba(54, 118, 224, 0.55);             /* カーソルタブの背景 */
     top            : 4px;                 /* 親要素からの位置   */
     left           : 4px;                 /* 親要素からの位置   */
     border-radius  : 26px;                /* 角丸               */
@@ -390,6 +390,6 @@ input[type="submit"]:hover{
   /* === 丸部分のSTYLE（ONのとき） =========================== */
   .switchArea input[type="checkbox"]:checked ~ #swImg {
     transform      : translateX(90px);    /* 丸も右へ移動       */
-    background     : #86a0de;             /* カーソルタブの背景 */
+    background     : #3676e0;             /* カーソルタブの背景 */
   }
 }
