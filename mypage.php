@@ -2,7 +2,7 @@
     session_start();
     require_once 'db_connect.php';
     $acid = $_SESSION['userid'];
-
+   
     $sql1 = "SELECT * FROM account WHERE id=:acid";
     $stm1 = $pdo->prepare($sql1);
     $stm1->bindValue(':acid', $acid, PDO::PARAM_INT);
@@ -40,8 +40,9 @@
             <table style="width:100%;" class="actable">
             <?php
                 foreach($result1 as $data1){  
+                    $pas="img/".$acid.$data1['cionid'];
             echo <<<"EOD"
-                    <td style="width:20%;"><img class="acimg" src="img/{$data1['cionid']}" alt="アイコン写真"></td>
+                    <td style="width:20%;"><img class="acimg" src="$pas" alt="アイコン写真"></td>
                     <td style="width:80%;" class="acname">{$data1['name']}</td>
             EOD;
                 }
