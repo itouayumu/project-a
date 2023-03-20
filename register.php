@@ -14,9 +14,9 @@ if(empty($_POST["name"])){
 }else if(empty($_POST["mail"])){
     $error_flg = 1;
     
-
-}else if(empty($_POST["icon"])){
+}else if(empty($_FILES)){
     $error_flg = 1;
+
     
 }else{
     
@@ -33,22 +33,26 @@ if(empty($_POST["name"])){
         $error_flg = 1;
     }else{
         //その結果が存在していなかったらインサートする
-        
+        $filename = $_FILES['cionid']['name'];
         $sql = "insert into account (name,mail,pw,cionid) values (:name, :mail, :pw, :cionid)";
         
         $stm = $pdo->prepare($sql);
         $stm->bindValue(':name',$_POST["name"],PDO::PARAM_STR);
         $stm->bindValue(':mail',$_POST["mail"],PDO::PARAM_STR);
         $stm->bindValue(':pw',$_POST["pw"],PDO::PARAM_STR);
-        $stm->bindValue(':cionid',$_POST["icon"],PDO::PARAM_STR);
+        $stm->bindValue(':cionid',$filename,PDO::PARAM_STR);
 
         $stm->execute();
-    }
-}
 
-if($error_flg != 1){
-    header("Location:login.php");
-}
+        $id = $pdo -> lastInsertId();
+        echo $id;
+         $uploaded_path = 'img/'.$id.$filename;
+         echo $uploaded_path;
+         $result = move_uploaded_file($_FILES['cionid']['tmp_name'],$uploaded_path);
+    }}
+        if($error_flg != 1){
+            header("Location:login.php");
+        }
 
     
 ?>
@@ -60,23 +64,9 @@ if($error_flg != 1){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/register.css">
-    <SCRIPT LANGUAGE="JavaScript">
-    // <!--
-    var ac_img = new Array();
-    ac_img[0] = new Array("img/ac1.png","アイコン１","ac1.png");
-    ac_img[1] = new Array("img/ac2.png","アイコン２","ac2.png");
-    ac_img[2] = new Array("img/ac3.jpeg","アイコン３","ac3.jpeg");
-    ac_img[3] = new Array("img/ac4.jpg","アイコン４","ac4.jpg");
-    ac_img[4] = new Array("img/ac5.png","アイコン５","ac5.png");
-    ac_img[5] = new Array("img/ac6.jpg","アイコン６","ac6.jpg");
-    ac_img[6] = new Array("img/ac7.jpg","アイコン７","ac7.jpg");
-    function set_img(sel_val)
-    {
-    img_area.src = ac_img[sel_val][0];
-    }
-    //-->
-    </SCRIPT>
+ 
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
     <!-- 特定ページのコンテンツをここに追加 -->
@@ -84,7 +74,7 @@ if($error_flg != 1){
         <a href="login.php" class="prev_button">←</a>
         <h2 class="register">新規登録</h2>
 
-        <form action="register.php" method="post">
+        <form action="register.php" method="post"enctype="multipart/form-data">
             <div class="register_form">
                 <h3 class="box">ユーザー名<span class="Required">必須</span></h3>
                 <div class="inputbox">
@@ -107,17 +97,31 @@ if($error_flg != 1){
                 </div>
 
                 <h3>アイコン<span class="Required">必須</span></h3>
-                <select onchange="set_img(this.selectedIndex)" name="icon">
-                    <SCRIPT language=javascript>
-                        for(nn=0;nn<ac_img.length;nn++) {
-                            document.write("<option value=" + ac_img[nn][2] + ">" + ac_img[nn][1]);
-                        }
-                    </SCRIPT>
-                </select>
+                <div id="app">
+      <div class="preview_zone">
+        <img :src="url" alt="ここにプレビューが表示されます">
+      </div>
+      <div class="upload_zone">
+        <input type="file" class="input_file" ref="preview" @change="previewImage"name="cionid">  
+      </div>
+    </div>
+    <script>
+       const app = new Vue({
+           el: '#app',
+           data: {
+               url: '',
+           },
+           methods: {
+               previewImage() {
+                   let image = this.$refs.preview.files[0];
+                   this.url = URL.createObjectURL(image);
+               }
+           }
+       })
+     </script>
+  </div>
 
-                <br><br>
-                    <img name=img_area border=1 style="width:150px; height:	150px; object-fit: cover;">
-                <br><br>
+               
             </div>
             
             <div class="transition_login">

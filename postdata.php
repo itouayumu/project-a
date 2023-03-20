@@ -109,9 +109,9 @@
                     <?php
                     
                         foreach($result2 as $data2){  
-                           
+                            $pas="img/".$acid.$data2['cionid'];
                         echo <<<"EOD"
-                                <td style="width:20%;"><img class="acimg" src="img/{$data2['cionid']}" alt="アイコン写真"></td>
+                                <td style="width:20%;"><img class="acimg" src=" $pas" alt="アイコン写真"></td>
                                 <td style="width:80%;" class="acname">{$data2['name']}</td>
                         EOD;
                         }

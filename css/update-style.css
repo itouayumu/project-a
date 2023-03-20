@@ -128,6 +128,25 @@ input[type="submit"]:hover{
 .update{
   text-align: center;
 }
+#app {
+  display: flex;
+  align-items: center;
+}
+.preview_zone {
+  border: 2px solid black;
+  /* width: 500px;
+  height: 400px; */
+  width: 50%;
+  height: 300px;
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-left: 15%;
+}
+img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
 
 /* === ボタンを表示するエリア ============================== */
 .switchArea {
