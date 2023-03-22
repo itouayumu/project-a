@@ -61,7 +61,7 @@
             </script>
             <input type="submit" value="変更" name="botan"><br>
         </form>
-        <a href="">戻る</a>
+        <a href="mypage.php">戻る</a>
     </div>
 </body>
 </html>
