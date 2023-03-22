@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/style.css">
     <title>投稿ページ</title>
+
   
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
 </head>
 <body>
 <header class="deleteheader">
