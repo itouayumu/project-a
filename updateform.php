@@ -126,12 +126,6 @@
        })
      </script>
 
-    <!-- <div class="switchArea">
-        <input type="checkbox" id="switch1" name="releaseid" value="0" <?php echo $release_y; ?>>
-        <label for="switch1"><span></span></label>
-        <div id="swImg"></div>
-    </div> -->
-
     <input type="submit" value="変更" name="botan"><br>
     <a href="mypage.php" name="a">戻る</a>
 </form>

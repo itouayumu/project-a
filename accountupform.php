@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once 'db_connect.php';
 
     $acid = $_SESSION['userid'];
 
@@ -7,7 +8,7 @@
     $stm1 = $pdo->prepare($sql1);
     $stm1->bindValue(':acid', $acid, PDO::PARAM_INT);
     $stm1->execute();
-    $result1 = $stm1->fetchAll(PDO::FETCH_ASSOC);
+    $result1 = $stm1->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="path/to/reset.css">
-    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/accountup-style.css">
     <link rel="stylesheet" href="css/style.css">
     <title>アカウント編集</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -28,12 +29,13 @@
     </ul>
     </header>
     
-    <div>
+    <div class="formdiv">
         <form class="acform" action="accountup.php" method="POST" enctype="multipart/form-data">
             <div class="acname">
                 <p>名前</p>
-                <input type="text" class="acname" placeholder="アカウント名" name="acname">
+                <input type="text" class="acname" placeholder="アカウント名" name="acname" value="<?php echo $result1['name']; ?>">
             </div>
+            <p>アイコン画像</p>
             <div id="app">
                 <div class="preview_zone">
                     <img :src="url" alt="ここにプレビューが表示されます">
@@ -57,6 +59,7 @@
                     }
                 })
             </script>
+            <input type="submit" value="変更" name="botan"><br>
         </form>
         <a href="">戻る</a>
     </div>
