@@ -7,136 +7,150 @@ body {
     background-color: #86a0de;
 }
 
-.flex {
-    display: flex;
-}
-
 .contents{
-    justify-content: center;
-    align-items: center;
-}
-
-
-.login {
+    background-color: #FFF;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
 }
 
-.flex-container {
-    background: #fff;
-    box-sizing: border-box;
-    width: 45%;
-    max-width: 500px;
-    border: 1px solid #707070;
-    border-radius: 50px;
-    padding: 10px 0 30px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    z-index: 1;
-    min-width: 500px;
-}
-
-.contents h2 {
-    font-weight: bold;
-    font-size: 48px;
-    margin: -50px 0px 20px;
-    letter-spacing: 1rem;
-
-}
-
-.login_form {
-    margin: 30px;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.notice {
-    height: 1rem;
-    color: red;
-    text-align: center;
-    font-size: 12px;
-}
-
-.login_form input[type="text"],
-.login_form input[type="password"] {
-    border: 1px solid #707070;
-    border-radius: 100px;
-    font-size: 20px;
-    padding: 3px 0px 3px 60px;
-    width: 80%;
-    max-width: 450px;
-    height: 50px;
-}
-
-.login_form input[type="submit"] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    margin: auto;
-    padding: .8em 2em;
-    border: none;
-    border-radius: 100px;
-    background-color: #1ee3cf;
-    color: black;
-    font-weight: 600;
-    font-size: 1em;
-
-}
-
-.contents p:last-child {
-    text-align: center;
-
-}
-
-.user_box,
-.pw_box {
-    display: inline-block; /* なくても大丈夫だけど、念の為 */
-    position: relative; /* 基準値とする */
-    margin: 0 auto;
-    width: 80%;
-    max-width: 500px;
-}
-
-.user_box::before,
-.pw_box::before {
-    content: ""; /* 疑似要素に必須 */
-    width: 30px; /* アイコンの横幅 */
-    height: 30px; /* アイコンの高さ */
-    display: inline-block; /* 高さを持たせるためにインラインブロック要素にする */
-    position: absolute; /* 相対位置に指定 */
-    top: 13px; /* アイコンの位置。微調整してね */
-    bottom: 0px;
-    margin-top: auto;
-    bottom: auto;
-    left: 24px; /* アイコンの位置。微調整してね */
-}
-
-.user_box::before {
-    background: url(../img/mail.png) no-repeat center center / auto 100%; /* 背景にアイコン画像を配置 */
-}
-
-.pw_box::before {
-    background: url(../img/pw.png) no-repeat center center / auto 100%; /* 背景にアイコン画像を配置 */
-
-}
-
-.user_box input,
-.pw_box input {
-    padding: 3px 0 3px 2em; /* アイコンを設置するため左の余白を多めに指定*/
-}
-
-.prev_button {
-    padding-left: 20px;
+.prev_button{
+    position: absolute;
+    margin-left: 20%;
+    left: 50px;
     text-decoration: none;
-    color: #000;
-    font-size: 50px;
-    z-index: 2;
+    font-size: 40px;
+    color: #3676e0;
 }
-.wrapper{
-    margin-top: 30px;
+
+.login{
+    font-size: 40px;
+    padding-top: 30px;
 }
+
+.login_form{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],input[type="password"]{
+    width: 40%;
+    height: 50px;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: double 5px #3676e0;
+    border-radius: 50px;
+}
+
+input[type="submit"]{
+    font-size: 25px;
+    width: 30%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 0px 50px 0px 50px;
+    border-radius: 50px;
+    border: solid 1px #3676e0;
+}
+
+input[type="submit"]:hover{
+    color: #1ee3cf;
+    background-color: #fff;
+}
+
+.transition_login{
+    padding-bottom: 50px;
+}
+
 .error{
     text-align: center;
     color: red;
     font-size: 0.8rem;
+}
+
+@media screen and (max-width: 480px) {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        background-color: #86a0de;
+    }
+    
+    .contents{
+        background-color: #FFF;
+        border-radius: 30px;
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: center;
+    }
+    
+    .prev_button{
+        position: absolute;
+        margin-left: 20%;
+        left: -20px;
+        text-decoration: none;
+        font-size: 40px;
+    }
+    
+    .login{
+        font-size: 35px;
+        padding-top: 30px;
+    }
+    
+    .login_form{
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+    
+    .box{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    input[type="text"],input[type="password"]{
+        width: 40%;
+        height: 40px;
+        font-size: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border: double 5px #3676e0;
+        border-radius: 50px;
+    }
+    
+    input[type="submit"]{
+        font-size: 20px;
+        width: 50%;
+        color: #fff;
+        background-color: #1ee3cf;
+        padding: 0px 30px 0px 30px;
+        border-radius: 50px;
+        border: solid 1px #3676e0;
+    }
+    
+    input[type="submit"]:hover{
+        color: #1ee3cf;
+        background-color: #fff;
+    }
+    
+    .transition_login{
+        padding-bottom: 50px;
+    }
+    
+    .error{
+        text-align: center;
+        color: red;
+        font-size: 0.8rem;
+    }
+
+    
 }

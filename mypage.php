@@ -2,7 +2,7 @@
     session_start();
     require_once 'db_connect.php';
     $acid = $_SESSION['userid'];
-
+   
     $sql1 = "SELECT * FROM account WHERE id=:acid";
     $stm1 = $pdo->prepare($sql1);
     $stm1->bindValue(':acid', $acid, PDO::PARAM_INT);
@@ -40,9 +40,10 @@
             <table style="width:100%;" class="actable">
             <?php
                 foreach($result1 as $data1){  
+                    $pas="img/".$acid.$data1['cionid'];
             echo <<<"EOD"
-                    <td style="width:20%;"><img class="acimg" src="img/{$data1['cionid']}" alt="アイコン写真" style="width: 200px; height: 200px;"></td>
-                    <td style="width:80%;" class="acname">{$data1['name']}</td>
+                    <td style="width:20%;"><img class="acimg" src="$pas" alt="アイコン写真"></td>
+                    <td style="width:80%;" class="acname"><a href="accountupform.php">{$data1['name']}</a></td>
             EOD;
                 }
             ?>
@@ -53,6 +54,7 @@
             <table style="width:100%;" class="posttable">
                 <?php
                     foreach($result2 as $data2){  
+                        $pas="img/".$data2['id'].$data2['imgid'];
                 echo <<<"EOD"
 
                     <tr>
@@ -61,7 +63,7 @@
                     <tr>
                         <td rowspan="2" style="width:50%;" class="postlink">
                             <a href="postdata.php?id={$data2['id']}">
-                                <img class="" src="img/{$data2['imgid']}" alt="記事写真" style="width: 100%; height: 200px; object-fit: cover;">
+                                <img class="postimg" src="$pas" alt="記事写真">
                                 <div class="mask">
                                     <div class="caption">詳細へ</div>
                                 </div>

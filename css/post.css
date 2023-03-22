@@ -71,23 +71,28 @@ height:400px;
 }
 
 body{
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
 }
-.post-radio{
-position: relative; top: 250px; 
+
+.image-upload .preview {
+  display: block;
+  width: 100%;
+  max-width: 100px;
+  height: auto;
 }
 
 .shakin1 {
   text-decoration: none;
   font-size: 30px;
-    width: 25%;
-    color: #fff;
-    background-color: #1ee3cf;
-    padding: 10px 110px 10px 110px;
-    margin-left: 50px;
-    border-radius: 30px;
-    position:absolute; top: 210%;   right: 57%;
-    border: none;
+  width: 25%;
+  color: #fff;
+  background-color: #1ee3cf;
+  padding: 10px 110px 10px 110px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  border-radius: 30px;
+  position:absolute; top: 230%;   right: 57%;
+  border: none;
 }
 
 .shakin1:hover{
@@ -96,16 +101,351 @@ position: relative; top: 250px;
 }
 .shakin2 {
   text-decoration: none;
-  font-size: 27px;
-  width: 5%;
-    color: #fff;
-    background-color: #1ee3cf;
-    padding: 10px 110px 10px 110px;
-    margin-left: 50px;
-    border-radius: 30px;
-    position:absolute; top: 210%;left: 53%;
+  font-size: 30px;
+  width: 25%;
+  color: #fff;
+  background-color: #1ee3cf;
+  padding: 10px 110px 10px 110px;
+  margin-left: 50px;
+  border-radius: 30px;
+  position:absolute; top: 230%;left: 53%;
+  border: none;
 }
 .shakin2:hover{
   color: #1ee3cf;
     background-color: #fff;
+}
+
+
+#app {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"]{
+  width: 50%;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: double 5px #86a0de;
+  border-radius: 50px;
+}
+
+textarea {
+  resize:none;
+  width:50%;
+  height:400px;
+  font-size: 20px;
+  border: double 5px #86a0de;
+  border-radius: 10px;
+}
+
+.preview_zone {
+  border: 2px solid black;
+  /* width: 500px;
+  height: 400px; */
+  width: 50%;
+  height: 300px;
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-left: 15%;
+}
+
+.post-radio{
+  margin-top: 50px;
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* === ボタンを表示するエリア ============================== */
+.switchArea {
+  line-height    : 60px;                /* 1行の高さ          */
+  letter-spacing : 0;                   /* 文字間             */
+  text-align     : center;              /* 文字位置は中央     */
+  font-size      : 27px;                /* 文字サイズ         */
+
+  position       : relative;            /* 親要素が基点       */
+  margin         : auto;                /* 中央寄せ           */
+  margin-top     : 50px;
+  width          : 150px;               /* ボタンの横幅       */
+  /* background     : #AAECFC;                デフォルト背景色   */
+}
+
+/* === チェックボックス ==================================== */
+.switchArea input[type="checkbox"] {
+  display        : none;            /* チェックボックス非表示 */
+}
+
+/* === チェックボックスのラベル（標準） ==================== */
+.switchArea label {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  height         : 60px;                /* ボタンの高さ       */
+  border         : 4px solid rgba(54, 118, 224, 0.70);   /* 未選択タブの枠線 */
+  border-radius  : 30px;                /* 角丸               */
+}
+
+/* === チェックボックスのラベル（ONのとき） ================ */
+.switchArea input[type="checkbox"]:checked +label {
+  border-color   : #3676e0;             /* 選択タブの枠線     */
+}
+
+/* === 表示する文字（標準） ================================ */
+.switchArea label span:after{
+  content        : "非公開";               /* 表示する文字       */
+  padding        : 0 0 0 45px;          /* 表示する位置       */
+  color          : rgba(54, 118, 224, 0.55);             /* 文字色             */
+}
+
+/* === 表示する文字（ONのとき） ============================ */
+.switchArea  input[type="checkbox"]:checked + label span:after{
+  content        : "公開";                /* 表示する文字       */
+  padding        : 0 36px 0 0;          /* 表示する位置       */
+  color          : #3676e0;             /* 文字色             */
+}
+
+/* === 丸部分のSTYLE（標準） =============================== */
+.switchArea #swImg {
+  position       : absolute;            /* 親要素からの相対位置*/
+  width          : 52px;                /* 丸の横幅           */
+  height         : 52px;                /* 丸の高さ           */
+  background     : rgba(54, 118, 224, 0.55);             /* カーソルタブの背景 */
+  top            : 4px;                 /* 親要素からの位置   */
+  left           : 4px;                 /* 親要素からの位置   */
+  border-radius  : 26px;                /* 角丸               */
+  transition     : .2s;                 /* 滑らか変化         */
+}
+
+/* === 丸部分のSTYLE（ONのとき） =========================== */
+.switchArea input[type="checkbox"]:checked ~ #swImg {
+  transform      : translateX(90px);    /* 丸も右へ移動       */
+  background     : #3676e0;             /* カーソルタブの背景 */
+}
+
+@media screen and (max-width: 480px) {
+  .delete-pan{
+    font-size: 15px;
+    margin: 0;
+    padding-top: 67px;
+    margin-left: -30px;
+  }
+  .breadcrumb {
+    margin: 0;
+   
+    list-style: none;
+  }
+  
+  .breadcrumb li {
+    display: inline;
+    list-style: none;
+    font-weight: bold;
+  }
+  
+  .breadcrumb li:after {
+    
+    content: '>';
+    padding: 0 0.2em;
+    color: #555;
+  }
+  
+  .breadcrumb li:last-child:after {
+    content: '';
+  }
+  
+  .breadcrumb li a {
+    text-decoration: none;
+    color: gray;
+  }
+  .post-title{
+    margin: 0;
+    padding: 0;
+    position:absolute; top: 20%; right:5%;
+    font-size: 25px;
+    color: white;
+  }
+  .post-subtitle{
+      color: white;
+      font-size: 30px;
+      margin-left: 5%;
+      display: flex;
+  }
+
+  .postform{
+      text-align: center;
+      font-size: 20px;
+      font-weight: 800;
+  }
+
+  input[type="text"]{
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: double 5px #86a0de;
+    border-radius: 50px;
+  }
+
+  textarea {
+    resize:none;
+    width:90%;
+    height:400px;
+    font-size: 20px;
+    border: double 5px #86a0de;
+    border-radius: 10px;
+  }
+
+  .img{
+    font-size: 15px;
+    height: 40%;
+    width: 40%;
+    background-color: white;
+    object-fit: cover;
+    display: flex;
+    position:absolute; top: 145%; right:30%;
+  }
+
+  body{
+      margin-bottom: 10%;
+  }
+
+  .image-upload .preview {
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+  }
+
+  .shakin1 {
+    text-decoration: none;
+    font-size: 30px;
+    width: 60%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 10px 50px 10px 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 50px;
+    border-radius: 30px;
+    position:static;
+    border: none;
+  }
+
+  .shakin1:hover{
+    color: #1ee3cf;
+      background-color: #fff;
+  }
+  .shakin2 {
+    text-decoration: none;
+    font-size: 30px;
+    width: 60%;
+    color: #fff;
+    background-color: #1ee3cf;
+    padding: 10px 50px 10px 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 30px;
+    position:static;
+    border: none;
+  }
+  .shakin2:hover{
+    color: #1ee3cf;
+      background-color: #fff;
+  }
+
+
+  #app {
+    display: block;
+    align-items: center;
+  }
+
+  .preview_zone {
+    border: 2px solid black;
+    width: 90%;
+    height: 200px;
+    margin-top: 50px;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .post-radio{
+    margin-top: 50px;
+  }
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* === ボタンを表示するエリア ============================== */
+  .switchArea {
+    line-height    : 60px;                /* 1行の高さ          */
+    letter-spacing : 0;                   /* 文字間             */
+    text-align     : center;              /* 文字位置は中央     */
+    font-size      : 27px;                /* 文字サイズ         */
+
+    position       : relative;            /* 親要素が基点       */
+    margin         : auto;                /* 中央寄せ           */
+    margin-top     : 50px;
+    margin-bottom: 50px;
+    width          : 150px;               /* ボタンの横幅       */
+    /* background     : #AAECFC;                デフォルト背景色   */
+  }
+
+  /* === チェックボックス ==================================== */
+  .switchArea input[type="checkbox"] {
+    display        : none;            /* チェックボックス非表示 */
+  }
+
+  /* === チェックボックスのラベル（標準） ==================== */
+  .switchArea label {
+    display        : block;               /* ボックス要素に変更 */
+    box-sizing     : border-box;          /* 枠線を含んだサイズ */
+    height         : 60px;                /* ボタンの高さ       */
+    border         : 4px solid rgba(54, 118, 224, 0.70);   /* 未選択タブの枠線 */
+    border-radius  : 30px;                /* 角丸               */
+  }
+
+  /* === チェックボックスのラベル（ONのとき） ================ */
+  .switchArea input[type="checkbox"]:checked +label {
+    border-color   : #3676e0;             /* 選択タブの枠線     */
+  }
+
+  /* === 表示する文字（標準） ================================ */
+  .switchArea label span:after{
+    content        : "非公開";               /* 表示する文字       */
+    padding        : 0 0 0 45px;          /* 表示する位置       */
+    color          : rgba(54, 118, 224, 0.55);             /* 文字色             */
+  }
+
+  /* === 表示する文字（ONのとき） ============================ */
+  .switchArea  input[type="checkbox"]:checked + label span:after{
+    content        : "公開";                /* 表示する文字       */
+    padding        : 0 36px 0 0;          /* 表示する位置       */
+    color          : #3676e0;             /* 文字色             */
+  }
+
+  /* === 丸部分のSTYLE（標準） =============================== */
+  .switchArea #swImg {
+    position       : absolute;            /* 親要素からの相対位置*/
+    width          : 52px;                /* 丸の横幅           */
+    height         : 52px;                /* 丸の高さ           */
+    background     : rgba(54, 118, 224, 0.55);             /* カーソルタブの背景 */
+    top            : 4px;                 /* 親要素からの位置   */
+    left           : 4px;                 /* 親要素からの位置   */
+    border-radius  : 26px;                /* 角丸               */
+    transition     : .2s;                 /* 滑らか変化         */
+  }
+
+  /* === 丸部分のSTYLE（ONのとき） =========================== */
+  .switchArea input[type="checkbox"]:checked ~ #swImg {
+    transform      : translateX(90px);    /* 丸も右へ移動       */
+    background     : #3676e0;             /* カーソルタブの背景 */
+  }
 }
