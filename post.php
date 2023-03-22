@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/style.css">
     <title>投稿ページ</title>
     <SCRIPT LANGUAGE="JavaScript">
-<!--
 var list_img = new Array();
 list_img[0] = new Array("img/k-autodoa.jpeg","アウトドア");
 list_img[1] = new Array("img/k-diy.jpg","DIY");
