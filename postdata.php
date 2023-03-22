@@ -82,11 +82,12 @@
       (コメントの内容とこの記事のIDをcommentというテーブルに挿入)
     ・３プリペイアドステートメントを作成し値をバインドしてsqlを実行。
     */ 
-    if(isset($_POST["content"])){
-        $sql = "insert into comment (postid,content) values (:postid, :content)";
+    if(isset($_POST["content"]) && isset($_POST["user"])){
+        $sql = "insert into comment (postid,name,content) values (:postid, :name,:content)";
         
         $stm = $pdo->prepare($sql);
         $stm->bindValue(':postid',$postid,PDO::PARAM_INT);
+        $stm->bindValue(':name',$_POST["user"],PDO::PARAM_STR);
         $stm->bindValue(':content',$_POST["content"],PDO::PARAM_STR);
 
         $stm->execute();
@@ -194,13 +195,15 @@
         <ul>
             <?php
             foreach($result as $reply){
+                echo"<li>".nl2br(htmlspecialchars($reply["name"],ENT_QUOTES,"UTF-8"))."</li>";
                 echo "<li>".nl2br(htmlspecialchars($reply["content"],ENT_QUOTES,"UTF-8"))."</li>";
             }
                 
             ?>
         </ul>
         <form action="postdata.php?id=<?php echo $postid; ?>" method="post">
-            <textarea name="content"></textarea>
+        <p>user</p><input type="text"  name="user"><br>
+            <p>内容<p><textarea name="content"class="com"></textarea><br>
         <input type="submit">
         </form>
     </div>
