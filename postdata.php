@@ -73,6 +73,41 @@
     }else{
         $error = 1;
     }
+
+
+    //コメント追加機能
+    /*
+    ・１このページに対してポストがあったかどうかを判定する
+    ・２ポストがあったらsql文を組み立てる
+      (コメントの内容とこの記事のIDをcommentというテーブルに挿入)
+    ・３プリペイアドステートメントを作成し値をバインドしてsqlを実行。
+    */ 
+    if(isset($_POST["content"])){
+        $sql = "insert into comment (postid,content) values (:postid, :content)";
+        
+        $stm = $pdo->prepare($sql);
+        $stm->bindValue(':postid',$postid,PDO::PARAM_INT);
+        $stm->bindValue(':content',$_POST["content"],PDO::PARAM_STR);
+
+        $stm->execute();
+    }
+
+        //コメント表示機能
+        /*記事のIDを基にその記事に対してのコメントを全権取得する*/
+    $sql= "select * from comment where postid = :postid";
+
+    //プレースホルダーは建設予定ち（:keyword）
+    $stm = $pdo->prepare($sql);
+    //SQL文を今から使いますよ
+    $stm->bindValue(':postid',$postid,PDO::PARAM_STR);
+    //プレースホルダーに値を入れました
+    $stm->execute();
+    //SQLの実行
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    //結果
+    
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,6 +186,32 @@
             <a href="postdata.php?id=<?php echo $nextid; ?>" class="migihidari">→</a><br>
             <div class="returnsoto"><a href="home.php" class="return">戻る</a></div>
         </div>
+
+    </div>
+
+    <div class="comment">
+        <h3>コメント</h3>
+        <ul>
+            <?php
+            foreach($result as $reply){
+                echo "<li>".nl2br(htmlspecialchars($reply["content"],ENT_QUOTES,"UTF-8"))."</li>";
+            }
+                
+            ?>
+        </ul>
+        <form action="postdata.php?id=<?php echo $postid; ?>" method="post">
+            <textarea name="content"></textarea>
+        <input type="submit">
+        </form>
+    </div>
+
+    <div class="returnstyle">
+        <a href="postdata.php?id=<?php echo $previd; ?>" class="migihidari">←</a>
+        <a href="postdata.php?id=<?php echo $nextid; ?>" class="migihidari">→</a><br>
+        <div class="returnsoto"><a href="home.php" class="return">戻る</a></div>
+    </div>
+
     <?php } ?>
+
 </body>
 </html>
