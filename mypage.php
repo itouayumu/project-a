@@ -43,7 +43,7 @@
                     $pas="img/".$acid.$data1['cionid'];
             echo <<<"EOD"
                     <td style="width:20%;"><img class="acimg" src="$pas" alt="アイコン写真"></td>
-                    <td style="width:80%;" class="acname">{$data1['name']}</td>
+                    <td style="width:80%;" class="acname"><a href="accountupform.php">{$data1['name']}</a></td>
             EOD;
                 }
             ?>
