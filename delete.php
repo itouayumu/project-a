@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="path/to/reset.css">
     <link rel="stylesheet" href="css/delete-style.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico">
     <title>削除ページ</title>
 </head>
 <body>

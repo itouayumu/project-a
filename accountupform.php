@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="path/to/reset.css">
     <link rel="stylesheet" href="css/accountup-style.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico">
     <title>アカウント編集</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>

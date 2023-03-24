@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="path/to/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/update-style.css">
-
+    <link rel="icon" href="img/favicon.ico">
     <SCRIPT LANGUAGE="JavaScript">
     // <!--
     var list_img = new Array();

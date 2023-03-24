@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="node_modules/ress/ress.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home-style.css">
+    <link rel="icon" href="img/favicon.ico">
     <title>Home</title>
 </head>
 <body>

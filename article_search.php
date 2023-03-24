@@ -47,6 +47,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/article_search.css">
+<link rel="icon" href="img/favicon.ico">
 <title>search</title>
 
 </head>

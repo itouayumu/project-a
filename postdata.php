@@ -121,6 +121,7 @@
     <title>PostData</title>
 </head>
 <body>
+
     <header class="header postheader">
         <?php if(empty($_SESSION)){ ?>
             <ul  class="homeul2">
@@ -133,7 +134,24 @@
             </ul>
         <?php } ?>
     </header>
+    <div class="change-pan">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="home.php">
+        <span itemprop="name">ホーム</span>
+    </a>
+    <meta itemprop="position" content="1" />
+  </li>
 
+  <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="mypage.php">
+        <span itemprop="name">記事詳細</span>
+    </a>
+    <meta itemprop="position" content="2" />
+  </li>
+        </div>
     <?php if(isset($error)){ ?>
         <div>
             <p class="huseip">消去された記事、または非公開の記事です</p>
