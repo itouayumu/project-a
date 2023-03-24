@@ -82,12 +82,12 @@
       (コメントの内容とこの記事のIDをcommentというテーブルに挿入)
     ・３プリペイアドステートメントを作成し値をバインドしてsqlを実行。
     */ 
-    if(isset($_POST["content"]) && isset($_POST["user"])){
-        $sql = "insert into comment (postid,name,content) values (:postid, :name,:content)";
+    if(isset($_POST["content"]) ){
+        $sql = "insert into comment (postid,content) values (:postid, :content)";
         
         $stm = $pdo->prepare($sql);
         $stm->bindValue(':postid',$postid,PDO::PARAM_INT);
-        $stm->bindValue(':name',$_POST["user"],PDO::PARAM_STR);
+        
         $stm->bindValue(':content',$_POST["content"],PDO::PARAM_STR);
 
         $stm->execute();
@@ -136,7 +136,7 @@
 
     <?php if(isset($error)){ ?>
         <div>
-            <p class="huseip">不正アクセスです。</p>
+            <p class="huseip">消去された記事、または非公開の記事です</p>
         </div>
     <?php }else{ ?>
         <div class="datapage">
@@ -195,14 +195,14 @@
         <ul>
             <?php
             foreach($result as $reply){
-                echo"<li>".nl2br(htmlspecialchars($reply["name"],ENT_QUOTES,"UTF-8"))."</li>";
+               
                 echo "<li>".nl2br(htmlspecialchars($reply["content"],ENT_QUOTES,"UTF-8"))."</li>";
+                echo "<br>";
             }
                 
             ?>
         </ul>
         <form action="postdata.php?id=<?php echo $postid; ?>" method="post">
-        <p>user</p><input type="text"  name="user"><br>
             <p>内容<p><textarea name="content"class="com"></textarea><br>
         <input type="submit">
         </form>

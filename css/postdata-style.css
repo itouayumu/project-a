@@ -27,7 +27,6 @@
     margin-left: 80%;
     width: 30%;
 }
-
 .homeul2 li {
     font-size: 25px;
     display: inline-block;
@@ -188,7 +187,14 @@ hr{
 }
 ul {
     list-style: none;
-    border: #3676e0;
+    text-decoration:underline;
+    text-decoration-color:#035aa6;
+  }
+  textarea {
+    resize: none;
+    width:500px;
+    height:200px;
+    font-size: 15px;
   }
 
 @media screen and (max-width: 480px) {

@@ -70,9 +70,7 @@ height:400px;
     position:absolute; top: 145%; right:30%;
 }
 
-body{
-    /* margin-bottom: 10%; */
-}
+
 
 .image-upload .preview {
   display: block;
@@ -161,7 +159,7 @@ img {
   width: 100%;
   height: 100%;
 }
-
+content
 /* === ボタンを表示するエリア ============================== */
 .switchArea {
   line-height    : 60px;                /* 1行の高さ          */
