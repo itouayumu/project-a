@@ -210,7 +210,7 @@
 
     <div class="comment">
         <h3>コメント</h3>
-        <ul>
+        <ul class="comli">
             <?php
             foreach($result as $reply){
                
