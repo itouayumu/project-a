@@ -185,6 +185,16 @@ hr{
     text-align: center;
     background-color: rgba(255,255,255,0.5); 
 }
+
+.comli li{
+    background-color: rgba(255,255,255,0.5);
+    margin-left: 5%;
+    margin-right: 10%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
 ul {
     list-style: none;
     text-decoration:underline;
